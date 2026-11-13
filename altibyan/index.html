@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ===== SEO: عدّل العنوان والوصف هنا ===== -->
+  <title>Al-Tibyan Academy | Learn Quran &amp; Arabic Online</title>
+  <meta name="description" content="Al-Tibyan Academy: live one-to-one online lessons in Quran recitation, tajweed and memorization, Arabic for native and non-native speakers, and Islamic Studies, with an Ijazah-certified teacher. Free trial lesson." />
+  <meta name="theme-color" content="#0a3d3d" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="ar_AR" />
+  <meta property="og:site_name" content="أكاديمية التبيان — Al-Tibyan Academy" />
+  <meta property="og:title" content="Al-Tibyan Academy | Quran · Arabic · Islamic Studies" />
+  <meta property="og:description" content="Live one-to-one Quran, Arabic and Islamic Studies lessons with flexible times and a free trial lesson." />
+  <link rel="canonical" href="https://muhammadabdelmoneem4-maker.github.io/altibyan/" />
+  <meta property="og:url" content="https://muhammadabdelmoneem4-maker.github.io/altibyan/" />
+  <!-- عند الانتقال إلى دومين خاص: غيّر الروابط الثلاثة هنا -->
+  <meta property="og:image" content="https://muhammadabdelmoneem4-maker.github.io/altibyan/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon: نجمة التبيان الذهبية -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100'%3E%3Crect x='-50' y='-50' width='100' height='100' rx='22' fill='%230a3d3d'/%3E%3Cg fill='%23d9a441'%3E%3Crect x='-27' y='-27' width='54' height='54'/%3E%3Crect x='-27' y='-27' width='54' height='54' transform='rotate(45)'/%3E%3C/g%3E%3Ccircle r='11' fill='%230a3d3d'/%3E%3C/svg%3E" />
+
+  <!-- خطوط الهوية: Reem Kufi للعناوين، Tajawal للنص العربي، Fraunces و Outfit للإنجليزي -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Tajawal:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- تطبيق الوضع واللغة المحفوظين قبل رسم الصفحة -->
+  <script>
+    (function () {
+      var d = document.documentElement, t = 'light';
+      d.classList.add('js');
+      try {
+        var s = localStorage.getItem('tibyan-theme');
+        t = s || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      } catch (e) {}
+      // اللغة: الافتراضي إنجليزي. الأولوية: رابط ‎#ar أو ‎#en ثم الاختيار المحفوظ
+      var l = 'en';
+      try { var sl = localStorage.getItem('tibyan-lang'); if (sl === 'ar' || sl === 'en') l = sl; } catch (e) {}
+      if (location.hash === '#ar' || location.hash === '#en') l = location.hash.slice(1);
+      d.lang = l; d.dir = l === 'ar' ? 'rtl' : 'ltr';
+      d.setAttribute('data-theme', t);
+    })();
+  </script>
+
+  <style>
+    /* =========================================================
+       1) المتغيرات — ألوان هوية التبيان (غيّرها من هنا)
+       ========================================================= */
+    :root {
+      --brand: #0a3d3d;        /* التيل الغامق — اللون الأساسي */
+      --brand-2: #0e5c5c;      /* تيل أفتح */
+      --brand-soft: #e3eeec;
+      --on-brand: #f4ebd9;
+      --gold: #d9a441;         /* الذهبي — اللون الثانوي */
+      --gold-soft: #e8c47a;
+      --gold-deep: #b8862e;
+      --gold-ink: #8a6220;     /* ذهبي داكن للنصوص على الخلفية الفاتحة */
+      --coral: #f1b89e;
+
+      --bg: #faf5ea;           /* كريمي */
+      --surface: #ffffff;
+      --surface-2: #f4ebd9;
+      --text: #1a2330;
+      --muted: #4a5462;
+      --border: #e4d9c0;
+      --focus: #b8862e;
+
+      --btn-bg: var(--brand);
+      --btn-text: #ffffff;
+      --btn-hover: var(--brand-2);
+
+      --radius-sm: 10px;
+      --radius: 16px;
+      --radius-lg: 24px;
+      --shadow-sm: 0 1px 2px rgba(10, 61, 61, .05), 0 2px 8px rgba(10, 61, 61, .05);
+      --shadow-md: 0 14px 34px -14px rgba(10, 61, 61, .22), 0 4px 10px rgba(10, 61, 61, .04);
+      --shadow-lg: 0 34px 70px -24px rgba(10, 61, 61, .35);
+      --container: 1180px;
+      --gutter: clamp(16px, 4vw, 32px);
+      --header-h: 78px;
+      --ease: cubic-bezier(.22, .61, .36, 1);
+
+      --font-body: "Tajawal", "Segoe UI", Tahoma, sans-serif;
+      --font-head: "Reem Kufi", "Tajawal", sans-serif;
+    }
+    html[lang="en"] {
+      --font-body: "Outfit", "Segoe UI", system-ui, sans-serif;
+      --font-head: "Fraunces", Georgia, serif;
+    }
+
+    /* الوضع الداكن */
+    [data-theme="dark"] {
+      --brand-soft: rgba(232, 196, 122, .1);
+      --bg: #061c1c;
+      --surface: #0b2828;
+      --surface-2: #082222;
+      --text: #f4ebd9;
+      --muted: #b6c6c1;
+      --border: #1d4040;
+      --gold-ink: #e8c47a;
+      --focus: #e8c47a;
+      --btn-bg: var(--gold);
+      --btn-text: #0a2626;
+      --btn-hover: var(--gold-soft);
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, .3);
+      --shadow-md: 0 14px 30px -12px rgba(0, 0, 0, .6);
+      --shadow-lg: 0 30px 60px -20px rgba(0, 0, 0, .75);
+    }
+
+    /* =========================================================
+       2) أساسيات
+       ========================================================= */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 12px); -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.85;
+      color: var(--text); background: var(--bg); overflow-x: clip;
+      transition: background-color .3s var(--ease), color .3s var(--ease);
+    }
+    html[lang="en"] body { line-height: 1.7; }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; color: inherit; }
+    h1, h2, h3, h4 { margin: 0 0 .5em; line-height: 1.35; font-weight: 700; font-family: var(--font-head); }
+    html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3 { font-weight: 600; letter-spacing: -.01em; }
+    h1 { font-size: clamp(2.2rem, 5.4vw, 3.8rem); }
+    h2 { font-size: clamp(1.8rem, 3.6vw, 2.7rem); }
+    h3 { font-size: clamp(1.15rem, 1.8vw, 1.32rem); }
+    p { margin: 0 0 1em; }
+    ul { margin: 0; padding: 0; list-style: none; }
+    :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 6px; }
+
+    .container { width: min(100% - var(--gutter) * 2, var(--container)); margin-inline: auto; }
+    .skip-link {
+      position: absolute; inset-inline-start: 16px; top: -60px; z-index: 200;
+      background: var(--brand); color: #fff; padding: 10px 18px; border-radius: var(--radius-sm); font-weight: 700; transition: top .2s;
+    }
+    .skip-link:focus { top: 12px; }
+    .ltr { direction: ltr; unicode-bidi: isolate; display: inline-block; }
+
+    /* =========================================================
+       3) الشعار (نجمة ثمانية + حرف التاء)
+       ========================================================= */
+    .emblem { position: relative; display: grid; place-items: center; flex: none; }
+    .emblem svg { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--gold); }
+    .emblem span { position: relative; font-family: "Reem Kufi", sans-serif; font-weight: 700; line-height: 1; color: #0a3d3d; transform: translateY(-8%); }
+    .logo { display: inline-flex; align-items: center; gap: .75rem; }
+    .logo .emblem { width: 46px; height: 46px; }
+    .logo .emblem span { font-size: 25px; }
+    .logo-sep { width: 1px; height: 34px; background: var(--border); }
+    .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .logo-text strong { font-family: "Reem Kufi", sans-serif; font-size: 1.45rem; color: var(--brand); }
+    [data-theme="dark"] .logo-text strong { color: var(--on-brand); }
+    .logo-text em { font-family: "Fraunces", serif; font-style: italic; font-weight: 500; font-size: .82rem; color: var(--gold-ink); direction: ltr; text-align: start; }
+
+    /* =========================================================
+       4) الأزرار
+       ========================================================= */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+      padding: .85rem 1.65rem; border-radius: 999px; border: 2px solid transparent;
+      font-weight: 700; font-size: 1rem; line-height: 1.4; cursor: pointer; white-space: nowrap;
+      transition: transform .25s var(--ease), box-shadow .25s var(--ease), background-color .25s, color .25s, border-color .25s;
+    }
+    .btn svg { width: 20px; height: 20px; flex: none; }
+    html[dir="ltr"] .btn .flip { transform: scaleX(-1); }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: none; }
+    .btn-primary { background: var(--btn-bg); color: var(--btn-text); box-shadow: 0 10px 22px -10px rgba(10, 61, 61, .6); }
+    .btn-primary:hover { background: var(--btn-hover); }
+    .btn-gold { background: var(--gold); color: #0a2626; }
+    .btn-gold:hover { background: var(--gold-soft); box-shadow: 0 12px 24px -10px rgba(217, 164, 65, .6); }
+    .btn-outline { border-color: var(--border); color: var(--text); background: var(--surface); }
+    .btn-outline:hover { border-color: var(--gold-deep); color: var(--gold-ink); }
+    .btn-whatsapp { background: #157347; color: #fff; }
+    .btn-whatsapp:hover { background: #0f5c37; box-shadow: 0 12px 24px -10px rgba(21, 115, 71, .6); }
+    .btn-sm { padding: .6rem 1.2rem; font-size: .95rem; }
+    .btn[disabled] { opacity: .7; cursor: progress; transform: none; }
+
+    .icon-btn {
+      min-width: 44px; height: 44px; padding: 0 .7rem; display: inline-flex; align-items: center; justify-content: center; gap: .35rem;
+      border-radius: 12px; border: 1px solid var(--border); background: var(--surface); cursor: pointer;
+      font-weight: 700; font-size: .9rem; transition: border-color .2s, color .2s;
+    }
+    .icon-btn:hover { border-color: var(--gold-deep); color: var(--gold-ink); }
+    .icon-btn svg { width: 20px; height: 20px; }
+
+    /* =========================================================
+       5) شريط التنقل
+       ========================================================= */
+    .site-header {
+      position: fixed; inset-inline: 0; top: 0; z-index: 100; height: var(--header-h);
+      background: color-mix(in srgb, var(--bg) 80%, transparent);
+      backdrop-filter: saturate(160%) blur(14px); -webkit-backdrop-filter: saturate(160%) blur(14px);
+      border-bottom: 1px solid transparent; transition: border-color .3s, box-shadow .3s;
+    }
+    .site-header.is-scrolled { border-bottom-color: var(--border); box-shadow: var(--shadow-sm); }
+    .nav { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .nav-menu { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-links { display: flex; align-items: center; gap: .1rem; }
+    .nav-links a { position: relative; padding: .5rem .75rem; font-weight: 500; font-size: .98rem; color: var(--muted); transition: color .2s; }
+    .nav-links a::after {
+      content: ""; position: absolute; left: 50%; bottom: .15rem; width: 7px; height: 7px; background: var(--gold);
+      transform: translateX(-50%) rotate(45deg) scale(0); transition: transform .3s var(--ease);
+    }
+    .nav-links a:hover, .nav-links a.is-active { color: var(--text); }
+    .nav-links a.is-active::after, .nav-links a:hover::after { transform: translateX(-50%) rotate(45deg) scale(1); }
+    .nav-actions { display: flex; align-items: center; gap: .5rem; }
+    .theme-toggle .i-sun { display: none; }
+    [data-theme="dark"] .theme-toggle .i-sun { display: block; }
+    [data-theme="dark"] .theme-toggle .i-moon { display: none; }
+
+    .menu-toggle { display: none; }
+    .bars { position: relative; width: 20px; height: 14px; }
+    .bars span { position: absolute; inset-inline: 0; height: 2px; border-radius: 2px; background: currentColor; transition: transform .3s var(--ease), opacity .2s, top .3s var(--ease); }
+    .bars span:nth-child(1) { top: 0; } .bars span:nth-child(2) { top: 6px; } .bars span:nth-child(3) { top: 12px; }
+    .nav-open .bars span:nth-child(1) { top: 6px; transform: rotate(45deg); }
+    .nav-open .bars span:nth-child(2) { opacity: 0; }
+    .nav-open .bars span:nth-child(3) { top: 6px; transform: rotate(-45deg); }
+
+    @media (max-width: 1060px) {
+      .menu-toggle { display: inline-flex; }
+      .nav-menu {
+        position: absolute; top: var(--header-h); inset-inline: 0; flex-direction: column; align-items: stretch; gap: 1rem;
+        padding: 1rem var(--gutter) 1.5rem; background: var(--surface); border-bottom: 1px solid var(--border); box-shadow: var(--shadow-md);
+        visibility: hidden; opacity: 0; transform: translateY(-8px);
+        transition: opacity .25s var(--ease), transform .25s var(--ease), visibility .25s;
+        max-height: calc(100vh - var(--header-h)); overflow-y: auto;
+      }
+      .nav-open .nav-menu { visibility: visible; opacity: 1; transform: none; }
+      .nav-links { flex-direction: column; align-items: stretch; }
+      .nav-links a { display: block; padding: .8rem .4rem; font-size: 1.05rem; border-bottom: 1px solid var(--border); }
+      .nav-links a::after { display: none; }
+      .nav-links a.is-active { color: var(--gold-ink); }
+      .nav-menu .btn { width: 100%; }
+    }
+
+    /* =========================================================
+       6) القسم الرئيسي (Hero)
+       ========================================================= */
+    .hero {
+      position: relative; isolation: isolate; overflow: hidden;
+      padding-top: calc(var(--header-h) + clamp(44px, 7vw, 90px)); padding-bottom: clamp(64px, 9vw, 120px);
+      background:
+        radial-gradient(55% 60% at 88% 8%, rgba(14, 92, 92, .16), transparent 70%),
+        radial-gradient(45% 50% at 8% 90%, rgba(217, 164, 65, .2), transparent 70%),
+        var(--bg);
+    }
+    .geo { position: absolute; inset: 0; z-index: -1; color: var(--gold-deep); opacity: .13; pointer-events: none;
+      -webkit-mask-image: radial-gradient(75% 70% at 50% 40%, #000 30%, transparent 85%); mask-image: radial-gradient(75% 70% at 50% 40%, #000 30%, transparent 85%); }
+    [data-theme="dark"] .geo { opacity: .1; color: var(--gold); }
+    .geo svg { width: 100%; height: 100%; }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(32px, 6vw, 72px); align-items: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: .55rem; padding: .35rem 1rem; border-radius: 999px; margin-bottom: 1.25rem;
+      background: var(--surface); border: 1px solid var(--border); color: var(--brand-2); font-size: .92rem; font-weight: 700;
+    }
+    [data-theme="dark"] .eyebrow { color: var(--gold-soft); }
+    .diamond { width: 9px; height: 9px; background: var(--gold); transform: rotate(45deg); flex: none; }
+    .hero h1 .hl { color: var(--brand-2); position: relative; white-space: nowrap; }
+    [data-theme="dark"] .hero h1 .hl { color: var(--gold-soft); }
+    .hero h1 .hl::after { content: ""; position: absolute; inset-inline: 0; bottom: .06em; height: .2em; z-index: -1; background: rgba(217, 164, 65, .4); border-radius: 4px; }
+    .hero-lead { font-size: clamp(1.08rem, 1.6vw, 1.26rem); color: var(--muted); max-width: 33em; margin-bottom: 2rem; }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: .8rem; margin-bottom: 2.25rem; }
+    .hero-trust { display: flex; flex-wrap: wrap; gap: 1rem 1.8rem; color: var(--muted); font-size: .97rem; font-weight: 500; }
+    .hero-trust li { display: flex; align-items: center; gap: .55rem; }
+
+    /* الشعار الكبير في الهيرو */
+    .hero-visual { position: relative; aspect-ratio: 1; max-width: 470px; width: 100%; margin-inline: auto; }
+    .orbit { position: absolute; inset: 6%; border: 1.5px dashed color-mix(in srgb, var(--gold-deep) 55%, transparent); border-radius: 50%; }
+    .orbit.o2 { inset: 20%; border-style: solid; border-color: var(--border); }
+    .big-emblem-wrap {
+      position: absolute; inset: 27%; border-radius: 50%; display: grid; place-items: center;
+      background: radial-gradient(circle at 35% 30%, #135f5f, #0a3d3d 70%); box-shadow: var(--shadow-lg);
+    }
+    .big-emblem-wrap .emblem { width: 72%; height: 72%; }
+    .big-emblem-wrap .emblem svg { animation: spin 60s linear infinite; }
+    .big-emblem-wrap .emblem span { font-size: clamp(48px, 9vw, 82px); }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .chip {
+      position: absolute; display: inline-flex; align-items: center; gap: .5rem; padding: .55rem 1rem;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 999px; box-shadow: var(--shadow-md);
+      font-weight: 700; font-size: .92rem; white-space: nowrap; animation: floaty 6s ease-in-out infinite;
+    }
+    .chip .diamond { width: 8px; height: 8px; }
+    .c1 { top: 2%; inset-inline-end: 22%; }
+    .c2 { top: 30%; inset-inline-end: -2%; animation-delay: -1.5s; }
+    .c3 { bottom: 22%; inset-inline-start: -4%; animation-delay: -3s; }
+    .c4 { bottom: 3%; inset-inline-end: 22%; animation-delay: -4.5s; }
+    .badge-card {
+      position: absolute; top: 15%; inset-inline-start: -4%; display: flex; align-items: center; gap: .65rem;
+      background: var(--brand); color: var(--on-brand); padding: .7rem 1rem; border-radius: 14px; box-shadow: var(--shadow-md);
+      font-size: .85rem; font-weight: 700; animation: floaty 7s ease-in-out infinite; animation-delay: -2s;
+    }
+    .badge-card small { display: block; font-weight: 400; color: var(--gold-soft); font-size: .875rem; }
+    .badge-card .ic { width: 32px; height: 32px; border-radius: 9px; background: var(--gold); color: #0a2626; display: grid; place-items: center; }
+    .badge-card .ic svg { width: 18px; height: 18px; }
+    @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+
+    /* =========================================================
+       7) عناوين الأقسام
+       ========================================================= */
+    .section { padding-block: clamp(72px, 10vw, 120px); }
+    .section--alt { background: var(--surface-2); }
+    .section-head { max-width: 690px; margin: 0 auto clamp(40px, 6vw, 64px); text-align: center; }
+    .section-head.start { margin-inline: 0; text-align: start; }
+    .section-head p { color: var(--muted); font-size: 1.1rem; margin: 0; }
+    .section-head .btn { margin-top: 1.3rem; }
+    .kicker { display: inline-flex; align-items: center; gap: .6rem; color: var(--gold-ink); font-weight: 700; font-size: .95rem; margin-bottom: .6rem; }
+    .kicker::before, .kicker::after { content: ""; width: 8px; height: 8px; background: currentColor; transform: rotate(45deg); }
+    .section-head.start .kicker::after { display: none; }
+    .ornament { display: flex; align-items: center; justify-content: center; gap: .6rem; color: var(--gold); margin-top: 1.2rem; }
+    .ornament::before, .ornament::after { content: ""; width: 60px; height: 1px; background: currentColor; opacity: .6; }
+    .ornament svg { width: 16px; height: 16px; }
+
+    /* =========================================================
+       8) عن الأكاديمية + العدادات
+       ========================================================= */
+    .about-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+    .about-text p { color: var(--muted); }
+    .creds { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1.4rem 0 2rem; }
+    .creds li { display: inline-flex; align-items: center; gap: .5rem; padding: .45rem 1rem; border-radius: 999px; border: 1.5px solid var(--gold); font-weight: 700; font-size: .92rem; background: var(--surface); }
+    .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .stat {
+      position: relative; overflow: hidden; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: clamp(1.3rem, 3vw, 2rem); box-shadow: var(--shadow-sm); transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+    }
+    .stat::after { content: ""; position: absolute; width: 70px; height: 70px; inset-inline-end: -26px; top: -26px; background: var(--gold); opacity: .14; transform: rotate(45deg); }
+    .stat:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .stat:nth-child(even) { margin-top: 26px; }
+    .stat-num { display: block; direction: ltr; font-family: "Reem Kufi", sans-serif; font-size: clamp(2.1rem, 4vw, 2.9rem); font-weight: 700; color: var(--brand-2); line-height: 1.2; unicode-bidi: plaintext; }
+    [data-theme="dark"] .stat-num { color: var(--gold-soft); }
+    .stat-label { color: var(--muted); font-weight: 500; }
+
+    /* =========================================================
+       9) البطاقات
+       ========================================================= */
+    .grid { display: grid; gap: clamp(16px, 2.5vw, 26px); }
+    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+    .card {
+      position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: clamp(1.5rem, 3vw, 2rem); box-shadow: var(--shadow-sm);
+      transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: color-mix(in srgb, var(--gold) 55%, var(--border)); }
+    .card p { color: var(--muted); margin: 0; }
+    .icon-box {
+      width: 58px; height: 58px; border-radius: 16px; display: grid; place-items: center; margin-bottom: 1.2rem;
+      background: var(--brand-soft); color: var(--brand-2); transition: background-color .3s, color .3s, transform .3s var(--ease);
+    }
+    [data-theme="dark"] .icon-box { color: var(--gold-soft); }
+    .icon-box svg { width: 28px; height: 28px; }
+    .service:hover .icon-box { background: var(--brand); color: var(--gold); transform: rotate(-6deg); }
+
+    /* لماذا التبيان */
+    .why { background: linear-gradient(135deg, #072e2e 0%, #0a3d3d 50%, #0e5c5c 100%); color: #fff; position: relative; overflow: hidden; isolation: isolate; }
+    .why .geo { opacity: .07; color: var(--gold); -webkit-mask-image: none; mask-image: none; }
+    .why .kicker { color: var(--gold-soft); }
+    .why .section-head p { color: #d6e4e0; }
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 1.25rem; }
+    .feature { padding: 1.75rem; border-radius: var(--radius-lg); background: rgba(255, 255, 255, .06); border: 1px solid rgba(232, 196, 122, .2); transition: background-color .3s, transform .3s var(--ease); }
+    .feature:hover { background: rgba(255, 255, 255, .1); transform: translateY(-4px); }
+    .feature .num { font-family: "Reem Kufi", sans-serif; font-size: .95rem; font-weight: 700; color: var(--gold-soft); }
+    .feature .icon-box { background: rgba(217, 164, 65, .16); color: var(--gold-soft); margin-top: .7rem; }
+    .feature p { color: #d6e4e0; margin: 0; }
+
+    /* البرامج */
+    .program { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+    .program-thumb { aspect-ratio: 16 / 9; position: relative; display: grid; place-items: center; overflow: hidden; }
+    .program-thumb .pat { position: absolute; inset: 0; color: rgba(255, 255, 255, .09); }
+    .program-thumb .pat svg { width: 100%; height: 100%; }
+    .program-thumb .big { position: relative; font-family: "Reem Kufi", sans-serif; font-weight: 700; font-size: clamp(2.3rem, 5vw, 3rem); color: #f4ebd9; transition: transform .5s var(--ease); line-height: 1; }
+    .program:hover .program-thumb .big { transform: scale(1.08); }
+    .p1 { background: linear-gradient(135deg, #0a3d3d, #0e5c5c); }
+    .p2 { background: linear-gradient(135deg, #8a6220, #d9a441); }
+    .p3 { background: linear-gradient(135deg, #0e5c5c, #2f7f72); }
+    .p4 { background: linear-gradient(135deg, #3d2f1a, #8a6220); }
+    .p5 { background: linear-gradient(135deg, #24324a, #3f5a7e); }
+    .p6 { background: linear-gradient(135deg, #8b4a3a, #c97b62); }
+    .program-body { padding: 1.4rem 1.6rem 1.7rem; flex: 1; display: flex; flex-direction: column; }
+    .tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: .75rem; }
+    .tag { font-size: .875rem; font-weight: 700; padding: .2rem .75rem; border-radius: 999px; background: var(--brand-soft); color: var(--brand-2); }
+    [data-theme="dark"] .tag { color: var(--gold-soft); }
+    .tag.gold { background: rgba(217, 164, 65, .18); color: var(--gold-ink); }
+
+    .more { margin-top: auto; padding-top: .9rem; min-height: 44px; display: inline-flex; align-items: center; gap: .4rem; font-weight: 700; font-size: .98rem; color: var(--brand-2); align-self: flex-start; }
+    [data-theme="dark"] .more { color: var(--gold-soft); }
+    .more svg { width: 18px; height: 18px; transition: transform .25s; }
+    html[dir="ltr"] .more svg { transform: scaleX(-1); }
+    .more:hover { color: var(--gold-ink); }
+    .program-body p { margin-bottom: .4rem; }
+
+    /* كيف تبدأ */
+    .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2.5vw, 26px); counter-reset: step; }
+    .step { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.4rem 1.6rem 1.6rem; box-shadow: var(--shadow-sm); }
+    .step-n { position: absolute; top: -22px; inset-inline-start: 1.5rem; width: 46px; height: 46px; display: grid; place-items: center; }
+    .step-n svg { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--gold); }
+    .step-n b { position: relative; font-family: "Reem Kufi", sans-serif; color: #0a3d3d; font-size: 1.15rem; }
+    .step p { color: var(--muted); margin: 0; }
+    .steps-cta { text-align: center; margin-top: clamp(28px, 4vw, 44px); }
+
+    /* زر الحجز الثابت على الجوال */
+    .sticky-cta { display: none; }
+    @media (max-width: 900px) {
+      .sticky-cta {
+        display: block; position: fixed; inset-inline: 0; bottom: 0; z-index: 95;
+        padding: .6rem var(--gutter) calc(.6rem + env(safe-area-inset-bottom, 0px));
+        background: color-mix(in srgb, var(--bg) 94%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+        border-top: 1px solid var(--border); transform: translateY(110%); visibility: hidden; transition: transform .3s var(--ease), visibility .3s;
+      }
+      .sticky-cta.is-visible { transform: none; visibility: visible; }
+      .sticky-cta .btn { width: 100%; }
+      .to-top { bottom: 86px; }
+      .site-footer { padding-bottom: 76px; }
+      .steps { grid-template-columns: 1fr; gap: 2.2rem; }
+    }
+
+    /* الباقات */
+    .packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2.5vw, 24px); align-items: stretch; }
+    .pack { display: flex; flex-direction: column; gap: .9rem; }
+    .pack .pnum { font-family: "Reem Kufi", sans-serif; color: var(--gold-ink); font-weight: 700; }
+    .pack h3 { margin: 0; }
+    .pack .sess { font-weight: 700; color: var(--text); }
+    .price { display: flex; align-items: baseline; gap: .45rem; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
+    .price b { font-family: "Reem Kufi", sans-serif; font-size: clamp(2.4rem, 4vw, 3rem); line-height: 1; color: var(--brand-2); }
+    [data-theme="dark"] .price b { color: var(--gold-soft); }
+    .price span { font-weight: 700; }
+    .per { font-size: .92rem; color: var(--muted); margin: 0; }
+    .pack.featured { background: linear-gradient(160deg, #0a3d3d, #0e5c5c); color: var(--on-brand); border-color: transparent; box-shadow: var(--shadow-lg); }
+    .pack.featured p, .pack.featured .per, .pack.featured .sess { color: #e6dcc5; }
+    .pack.featured h3 { color: #fff; }
+    .pack.featured .price { border-top-color: rgba(244, 235, 217, .2); }
+    .pack.featured .price b { color: var(--gold-soft); }
+    .pack.featured .pnum { color: var(--gold-soft); }
+    .popular { position: absolute; top: -14px; inset-inline-start: 1.6rem; background: var(--gold); color: #0a2626; font-size: .875rem; font-weight: 700; padding: .3rem .9rem; border-radius: 999px; }
+    .pack .btn { margin-top: .4rem; }
+    .track {
+      margin-top: clamp(16px, 2.5vw, 24px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem 2rem;
+      padding: 1.6rem 2rem; border-radius: var(--radius-lg); border: 1.5px dashed var(--gold-deep); background: var(--surface);
+    }
+    .track h3 { margin: 0 0 .2rem; }
+    .track p { margin: 0; color: var(--muted); }
+    .perks { margin-top: clamp(28px, 4vw, 44px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: .9rem 2rem; }
+    .perks li { display: flex; align-items: center; gap: .8rem; font-weight: 500; }
+    .note { text-align: center; color: var(--muted); font-size: .92rem; margin-top: 1.5rem; }
+
+    /* آراء */
+    .testimonial { display: flex; flex-direction: column; gap: 1.2rem; margin: 0; }
+    .testimonial .quote-ic { width: 38px; height: 38px; color: var(--gold); }
+    html[dir="ltr"] .testimonial .quote-ic { transform: scaleX(-1); }
+    .testimonial blockquote { margin: 0; font-size: 1.05rem; flex: 1; }
+    .stars { display: flex; gap: 2px; color: var(--gold); }
+    .stars svg { width: 18px; height: 18px; }
+    .person { display: flex; align-items: center; gap: .85rem; padding-top: 1.2rem; border-top: 1px solid var(--border); }
+    .avatar { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; font-family: "Reem Kufi", sans-serif; font-weight: 700; color: #f4ebd9; flex: none; }
+    .person strong { display: block; line-height: 1.4; }
+    .person span { color: var(--muted); font-size: .9rem; }
+    .person .avatar { color: #f4ebd9; font-size: 1.1rem; }
+
+    /* =========================================================
+       10) الأسئلة الشائعة
+       ========================================================= */
+    .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(32px, 6vw, 80px); align-items: start; }
+    .faq-aside { position: sticky; top: calc(var(--header-h) + 24px); }
+    .faq-aside p { color: var(--muted); }
+    .faq-list { display: grid; gap: .9rem; }
+    .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); transition: border-color .3s, box-shadow .3s; }
+    .faq-item.is-open { border-color: var(--gold); box-shadow: var(--shadow-sm); }
+    .faq-item h3 { margin: 0; font-size: inherit; font-family: var(--font-body); }
+    .faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.15rem 1.4rem; background: none; border: 0; cursor: pointer; text-align: start; font-weight: 700; font-size: 1.05rem; border-radius: var(--radius); }
+    .chev { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; flex: none; background: var(--brand-soft); color: var(--brand-2); transition: transform .3s var(--ease), background-color .3s, color .3s; }
+    [data-theme="dark"] .chev { color: var(--gold-soft); }
+    .chev svg { width: 18px; height: 18px; }
+    .faq-item.is-open .chev { transform: rotate(180deg); background: var(--gold); color: #0a2626; }
+    .faq-a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s var(--ease); }
+    .faq-item.is-open .faq-a { grid-template-rows: 1fr; }
+    .faq-a > div { overflow: hidden; }
+    .faq-a p { padding: 0 1.4rem 1.25rem; margin: 0; color: var(--muted); }
+
+    /* =========================================================
+       11) تواصل معنا
+       ========================================================= */
+    .contact-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: clamp(20px, 3vw, 32px); align-items: stretch; }
+    .form-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: clamp(1.5rem, 4vw, 2.5rem); box-shadow: var(--shadow-md); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .field { margin-bottom: 1.05rem; }
+    .field label { display: block; font-weight: 700; margin-bottom: .4rem; font-size: .95rem; }
+    .req { color: #b03a2e; }
+    [data-theme="dark"] .req { color: #ff8a7a; }
+    .field input, .field textarea, .field select {
+      width: 100%; padding: .85rem 1rem; border-radius: 12px; border: 1.5px solid var(--border); background: var(--bg);
+      transition: border-color .2s, box-shadow .2s, background-color .2s;
+    }
+    .field textarea { min-height: 130px; resize: vertical; }
+    .field input::placeholder, .field textarea::placeholder { color: color-mix(in srgb, var(--muted) 75%, transparent); }
+    .field input:focus, .field textarea:focus, .field select:focus { outline: none; border-color: var(--gold-deep); box-shadow: 0 0 0 4px rgba(217, 164, 65, .22); background: var(--surface); }
+    html[dir="rtl"] .field input[dir="ltr"] { text-align: right; }
+    .field [aria-invalid="true"] { border-color: #b03a2e; }
+    .error { display: block; min-height: 1.4em; color: #b03a2e; font-size: .86rem; margin-top: .3rem; }
+    [data-theme="dark"] .error { color: #ff8a7a; }
+    .form-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
+    .form-foot small { color: var(--muted); }
+    .spinner { width: 18px; height: 18px; border: 2px solid currentColor; border-top-color: transparent; border-radius: 50%; animation: spin .8s linear infinite; display: none; }
+    .is-loading .spinner { display: inline-block; }
+    .is-loading .send-ic { display: none; }
+    .success { display: none; text-align: center; padding: 2rem 1rem; }
+    .success.is-shown { display: block; animation: pop .45s var(--ease); }
+    .success .ok { width: 74px; height: 74px; margin: 0 auto 1rem; display: grid; place-items: center; position: relative; }
+    .success .ok .emblem { width: 74px; height: 74px; }
+    .success .ok svg.check { position: relative; width: 30px; height: 30px; color: #0a3d3d; }
+    .success p { color: var(--muted); }
+    .success-actions { display: flex; flex-wrap: wrap; gap: .7rem; justify-content: center; align-items: center; }
+    .btn[hidden] { display: none; }
+    @keyframes pop { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
+
+    .info-card { background: linear-gradient(160deg, #072e2e, #0a3d3d 60%, #0e5c5c); color: var(--on-brand); border-radius: var(--radius-lg); padding: clamp(1.5rem, 4vw, 2.5rem); display: flex; flex-direction: column; gap: 1.4rem; position: relative; overflow: hidden; isolation: isolate; }
+    .info-card::after { content: ""; position: absolute; z-index: -1; width: 220px; height: 220px; inset-inline-start: -80px; bottom: -80px; background: var(--gold); opacity: .14; transform: rotate(45deg); }
+    .info-card h3 { margin: 0; color: #fff; }
+    .info-card > p { color: #d6e4e0; margin: 0; }
+    .info-list { display: grid; gap: 1.05rem; }
+    .info-list li { display: flex; gap: .85rem; align-items: flex-start; }
+    .info-list .ic { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: rgba(217, 164, 65, .16); color: var(--gold-soft); flex: none; }
+    .info-list .ic svg { width: 20px; height: 20px; }
+    .info-list small { display: block; color: #b9cfca; font-size: .875rem; }
+    .info-list a, .info-list .val { font-weight: 700; }
+    .info-list a { display: inline-block; padding-block: .45rem; margin-block: -.3rem; min-height: 44px; }
+    .info-list a:hover { color: var(--gold-soft); }
+    .info-card .btn-whatsapp { align-self: flex-start; margin-top: auto; }
+    .info-card :focus-visible { outline-color: var(--gold-soft); }
+
+    /* =========================================================
+       12) التذييل
+       ========================================================= */
+    .site-footer { background: #051919; color: #c6d4d0; padding-top: clamp(56px, 8vw, 88px); position: relative; }
+    .site-footer::before { content: ""; position: absolute; top: 0; inset-inline: 0; height: 4px; background: linear-gradient(90deg, var(--gold-deep), var(--gold-soft), var(--gold-deep)); }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 2.5rem; padding-bottom: 3rem; }
+    .site-footer .logo-text strong { color: #f4ebd9; }
+    .site-footer .logo-text em { color: var(--gold-soft); }
+    .site-footer .logo-sep { background: rgba(244, 235, 217, .2); }
+    .footer-about { margin-top: 1rem; color: #a9bdb8; max-width: 30em; }
+    .site-footer h4 { color: #f4ebd9; font-size: 1.05rem; margin-bottom: 1rem; }
+    .footer-links { display: grid; gap: .1rem; }
+    .footer-links li { min-height: 44px; display: flex; align-items: center; }
+    .footer-links a { color: #b8cac6; transition: color .2s, padding .2s; display: inline-flex; align-items: center; min-height: 44px; }
+    .footer-links a:hover { color: var(--gold-soft); padding-inline-start: 4px; }
+    .socials { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.25rem; }
+    .socials a { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: rgba(255, 255, 255, .06); border: 1px solid rgba(232, 196, 122, .18); color: #e9e1cf; transition: background-color .25s, transform .25s var(--ease), color .25s; }
+    .socials a:hover { background: var(--gold); color: #0a2626; transform: translateY(-3px); }
+    .socials svg { width: 19px; height: 19px; }
+    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, .08); padding-block: 1.4rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem; font-size: .9rem; color: #93aaa5; }
+    .site-footer :focus-visible { outline-color: var(--gold-soft); }
+
+    /* زر العودة لأعلى */
+    .to-top {
+      position: fixed; inset-inline-end: 20px; bottom: 20px; z-index: 90; width: 50px; height: 50px; border: 0; cursor: pointer;
+      background: var(--gold); color: #0a2626; box-shadow: var(--shadow-md); border-radius: 14px; display: grid; place-items: center;
+      opacity: 0; visibility: hidden; transform: translateY(16px) rotate(45deg); transition: opacity .3s, transform .3s var(--ease), visibility .3s, background-color .2s;
+    }
+    .to-top svg { width: 22px; height: 22px; transform: rotate(-45deg); }
+    .to-top.is-visible { opacity: 1; visibility: visible; transform: rotate(45deg); }
+    .to-top:hover { background: var(--gold-soft); }
+
+    /* =========================================================
+       13) حركة الظهور
+       ========================================================= */
+    .js .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s var(--ease), transform .8s var(--ease); transition-delay: var(--d, 0s); }
+    .js .reveal.is-visible { opacity: 1; transform: none; }
+
+    /* =========================================================
+       14) التجاوب
+       ========================================================= */
+    @media (max-width: 1024px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 900px) {
+      .hero-grid, .about-grid, .faq-grid, .contact-grid { grid-template-columns: 1fr; }
+      .packages { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; }
+      .faq-aside { position: static; }
+      .hero-visual { max-width: 400px; }
+    }
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-cta .btn { flex: 1 1 100%; }
+      .stat:nth-child(even) { margin-top: 0; }
+      .nav .logo-sep, .nav .logo-text em { display: none; }
+      .chip { font-size: .875rem; padding: .4rem .75rem; }
+      .badge-card { display: none; }
+      .hero-visual { max-width: 290px; }
+      .c3 { inset-inline-start: 0; }
+      .c2 { inset-inline-end: 0; }
+      .track { padding: 1.4rem; }
+    }
+    @media (max-width: 380px) {
+      .nav-actions { gap: .3rem; }
+      .icon-btn { min-width: 38px; height: 38px; padding: 0 .5rem; }
+      .logo { gap: .5rem; }
+      .logo .emblem { width: 38px; height: 38px; }
+      .logo .emblem span { font-size: 21px; }
+      .logo-text strong { font-size: 1.25rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; transition-delay: 0s !important; }
+      .js .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">تخطَّ إلى المحتوى</a>
+
+  <!-- أيقونات مشتركة -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="star8" viewBox="-50 -50 100 100"><g fill="currentColor"><rect x="-33" y="-33" width="66" height="66"/><rect x="-33" y="-33" width="66" height="66" transform="rotate(45)"/></g></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.8 2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4-4.7-4.4 6.4-.8z"/></symbol>
+      <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5 5 16.2A8.5 8.5 0 1 1 8 19.2z"/><path d="M9 8.6c0 3.4 2.9 6.4 6.4 6.4l1.1-1.6-2-1-1 .9c-1.2-.5-2.2-1.5-2.7-2.7l.9-1-1-2z"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></symbol>
+      <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="i-quote" viewBox="0 0 24 24" fill="currentColor"><path d="M4 18v-5c0-4 2-7 6-8l.8 1.6C8.6 7.5 7.6 9 7.5 11H10v7zm10 0v-5c0-4 2-7 6-8l.8 1.6c-2.2.9-3.2 2.4-3.3 4.4H20v7z"/></symbol>
+      <!-- نقش هندسي إسلامي -->
+      <pattern id="geoPat" width="80" height="80" patternUnits="userSpaceOnUse">
+        <g fill="none" stroke="currentColor" stroke-width="1.2">
+          <rect x="22" y="22" width="36" height="36"/>
+          <rect x="22" y="22" width="36" height="36" transform="rotate(45 40 40)"/>
+          <path d="M0 0 22 22M80 0 58 22M0 80 22 58M80 80 58 58"/>
+          <circle cx="40" cy="40" r="7"/>
+        </g>
+      </pattern>
+    </defs>
+  </svg>
+
+  <!-- ==================== 1) شريط التنقل ==================== -->
+  <header class="site-header" id="header">
+    <nav class="nav container" aria-label="التنقل الرئيسي" data-i18n-aria="navLabel">
+      <a href="#home" class="logo">
+        <span class="emblem" aria-hidden="true"><svg><use href="#star8"/></svg><span>ت</span></span>
+        <span class="logo-sep" aria-hidden="true"></span>
+        <span class="logo-text"><strong>التبيان</strong><em>Al‑Tibyan Academy</em></span>
+      </a>
+
+      <div class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="#about" data-i18n="nAbout">عن الأكاديمية</a></li>
+          <li><a href="#subjects" data-i18n="nSubjects">ماذا نُعلِّم</a></li>
+          <li><a href="#programs" data-i18n="nPrograms">البرامج</a></li>
+          <li><a href="#packages" data-i18n="nPackages">الباقات</a></li>
+          <li hidden><a href="#testimonials" data-i18n="nReviews">آراء أولياء الأمور</a></li>
+          <li><a href="#faq" data-i18n="nFaq">الأسئلة الشائعة</a></li>
+        </ul>
+        <a href="#contact" class="btn btn-primary btn-sm js-wa" data-i18n="ctaNav">احجز حصة تجريبية</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="langToggle" type="button" lang="en" aria-label="EN — English">EN</button>
+        <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="التبديل إلى الوضع الداكن">
+          <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="navMenu">
+          <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ==================== 2) القسم الرئيسي ==================== -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="geo" aria-hidden="true"><svg><rect width="100%" height="100%" fill="url(#geoPat)"/></svg></div>
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow reveal"><span class="diamond" aria-hidden="true"></span><span data-i18n="eyebrow">أكاديمية أونلاين · قرآن · عربية · تربية إسلامية</span></span>
+          <!-- عدّل العنوان الرئيسي هنا -->
+          <h1 id="hero-title" class="reveal" style="--d:.08s" data-i18n="heroTitle">تعلَّم القرآن والعربية <span class="hl">بإتقان</span>… من بيتك</h1>
+          <p class="hero-lead reveal" style="--d:.16s" data-i18n="heroLead">حصص فردية مباشرة مع معلم مُجاز بالسند، لأبنائك ولك، بخطة تناسب المستوى ومواعيد مرنة تناسب توقيتك أينما كنت.</p>
+          <div class="hero-cta reveal" style="--d:.24s">
+            <a href="#contact" class="btn btn-primary js-wa"><span data-i18n="ctaTrial">احجز حصة تجريبية مجانية</span><svg class="flip" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a href="#packages" class="btn btn-outline" data-i18n="ctaPackages">تعرّف على الباقات</a>
+          </div>
+          <ul class="hero-trust reveal" style="--d:.32s">
+            <li><span class="diamond" aria-hidden="true"></span><span data-i18n="trust1">مُجاز في قراءة الإمام عاصم</span></li>
+            <li><span class="diamond" aria-hidden="true"></span><span data-i18n="trust2">حصة تجريبية مجانية</span></li>
+            <li><span class="diamond" aria-hidden="true"></span><span data-i18n="trust3">تقرير شهري لولي الأمر</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal" style="--d:.2s" aria-hidden="true">
+          <div class="orbit"></div>
+          <div class="orbit o2"></div>
+          <div class="big-emblem-wrap"><span class="emblem"><svg><use href="#star8"/></svg><span>ت</span></span></div>
+          <span class="chip c1"><span class="diamond"></span><span data-i18n="chip1">التجويد</span></span>
+          <span class="chip c2"><span class="diamond"></span><span data-i18n="chip2">الحفظ والمراجعة</span></span>
+          <span class="chip c3"><span class="diamond"></span><span data-i18n="chip3">اللغة العربية</span></span>
+          <span class="chip c4"><span class="diamond"></span><span data-i18n="chip4">التربية الإسلامية</span></span>
+          <div class="badge-card">
+            <span class="ic"><svg><use href="#i-check"/></svg></span>
+            <span><span data-i18n="badgeT">حصص فردية 1:1</span><small>Zoom · Google Meet</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3) عن الأكاديمية + أرقام ==================== -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-text">
+          <div class="section-head start reveal">
+            <span class="kicker" data-i18n="aboutK">عن التبيان</span>
+            <h2 id="about-title" data-i18n="aboutH">معلم مُجاز بالسند، يشرح بالعربية والإنجليزية</h2>
+          </div>
+          <p class="reveal" data-i18n="aboutP1">«التبيان» أكاديمية أونلاين متخصصة في تعليم القرآن الكريم واللغة العربية والتربية الإسلامية للأطفال والكبار، للناطقين بالعربية ولغير الناطقين بها، في أي مكان في العالم.</p>
+          <p class="reveal" data-i18n="aboutP2">تعمل الأكاديمية بإشراف المعلم محمد عبدالمنعم، خريج كلية اللغات والترجمة بجامعة الأزهر (قسم الدراسات الإسلامية باللغة الإنجليزية)، والمُجاز بالسند في قراءة الإمام عاصم، وقد درّس القرآن والعربية والتربية الإسلامية لطلاب من جنسيات متعددة، لذلك نجمع بين ضبط التلاوة وسهولة الشرح بالعربية أو الإنجليزية.</p>
+          <ul class="creds reveal">
+            <li><span class="diamond" aria-hidden="true"></span><span data-i18n="cred1">إجازة بالسند في قراءة عاصم</span></li>
+            <li><span class="diamond" aria-hidden="true"></span><span data-i18n="cred2">خريج جامعة الأزهر</span></li>
+            <li><span class="diamond" aria-hidden="true"></span><span data-i18n="cred3">التدريس بالعربية والإنجليزية</span></li>
+          </ul>
+          <a href="#contact" class="btn btn-primary reveal js-wa" data-i18n="aboutCta">تحدّث معنا الآن</a>
+        </div>
+
+        <!-- بطاقات حقائق: عدّل القيم والنصوص هنا -->
+        <div class="stats">
+          <div class="stat reveal"><span class="stat-num">2022</span><span class="stat-label" data-i18n="st1">نُدرِّس منذ عام</span></div>
+          <div class="stat reveal" style="--d:.08s"><span class="stat-num" data-target="3" data-suffix="">3</span><span class="stat-label" data-i18n="st2">مواد: القرآن، العربية، التربية الإسلامية</span></div>
+          <div class="stat reveal" style="--d:.16s"><span class="stat-num">1:1</span><span class="stat-label" data-i18n="st3">حصص فردية مباشرة</span></div>
+          <div class="stat reveal" style="--d:.24s"><span class="stat-num" data-target="2" data-suffix="">2</span><span class="stat-label" data-i18n="st4">لغتان للشرح: العربية والإنجليزية</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4) ماذا نُعلِّم (الخدمات) ==================== -->
+    <section class="section section--alt" id="subjects" aria-labelledby="subjects-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker" data-i18n="subK">ماذا نُعلِّم</span>
+          <h2 id="subjects-title" data-i18n="subH">رحلة متكاملة من أول حرف حتى الإتقان</h2>
+          <p data-i18n="subP">نبني لكل طالب خطة على مقاسه بعد حصة تحديد المستوى، ونتابع تقدّمه حصة بحصة.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card service reveal">
+            <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10.3 5 7.8 4.5 4 4.5v13c3.8 0 6.3.5 8 2 1.7-1.5 4.2-2 8-2v-13c-3.8 0-6.3.5-8 2z"/><path d="M12 6.5v13"/></svg></div>
+            <h3 data-i18n="s1h">تصحيح التلاوة</h3>
+            <p data-i18n="s1p">قراءة صحيحة من المصحف، وتصحيح مخارج الحروف وصفاتها، مع التدرّج من القاعدة النورانية للمبتدئين.</p>
+          </article>
+          <article class="card service reveal" style="--d:.08s">
+            <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14c2-4 4-4 6 0s4 4 6 0 3-3 4-2"/><path d="M4 8h4M4 19h16"/></svg></div>
+            <h3 data-i18n="s2h">أحكام التجويد</h3>
+            <p data-i18n="s2p">شرح نظري مبسّط وتطبيق عملي مباشر على الآيات، حتى تصبح الأحكام عادة في التلاوة لا معلومة محفوظة فقط.</p>
+          </article>
+          <article class="card service reveal" style="--d:.16s">
+            <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <h3 data-i18n="s3h">الحفظ والمراجعة</h3>
+            <p data-i18n="s3p">خطة حفظ تناسب عمر الطالب ووقته، مع جدول مراجعة منتظم يثبّت المحفوظ ولا يضيع مع الوقت.</p>
+          </article>
+          <article class="card service reveal">
+            <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 9 4h1l5 16"/><path d="M6 14h7"/><path d="M15 10h5M17.5 8v12"/></svg></div>
+            <h3 data-i18n="s4h">العربية للناطقين بها</h3>
+            <p data-i18n="s4p">قراءة وكتابة وإملاء وقواعد ونحو مبسّط للأطفال والطلاب، لتقوية اللغة الأم وفهم ما يقرؤونه.</p>
+          </article>
+          <article class="card service reveal" style="--d:.08s">
+            <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></div>
+            <h3 data-i18n="s5h">العربية لغير الناطقين بها</h3>
+            <p data-i18n="s5p">من الحروف والأصوات حتى المحادثة وفهم معاني القرآن، مع الشرح باللغة الإنجليزية عند الحاجة.</p>
+          </article>
+          <article class="card service reveal" style="--d:.16s">
+            <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 7v5c0 4.2 3 7.8 7 9 4-1.2 7-4.8 7-9V7z"/><path d="M14.5 9.5a3 3 0 1 0 0 5 3.5 3.5 0 1 1 0-5z"/></svg></div>
+            <h3 data-i18n="s6h">التربية الإسلامية</h3>
+            <p data-i18n="s6p">عقيدة وفقه عبادات وسيرة نبوية وآداب إسلامية، بأسلوب قصصي محبّب يناسب كل مرحلة عمرية.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5) لماذا التبيان ==================== -->
+    <section class="section why" id="why" aria-labelledby="why-title">
+      <div class="geo" aria-hidden="true"><svg><rect width="100%" height="100%" fill="url(#geoPat)"/></svg></div>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker" data-i18n="whyK">لماذا التبيان؟</span>
+          <h2 id="why-title" data-i18n="whyH">ما تحصل عليه مع كل اشتراك</h2>
+          <p data-i18n="whyP">أربعة أشياء ثابتة في كل باقة، مهما كان عمر الطالب أو مستواه.</p>
+        </div>
+        <div class="features">
+          <div class="feature reveal">
+            <span class="num">01</span>
+            <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="m8.5 13-1.5 8 5-2.5 5 2.5-1.5-8"/></svg></div>
+            <h3 data-i18n="w1h">معلم مُجاز بالسند</h3>
+            <p data-i18n="w1p">تلاوة متصلة السند في قراءة الإمام عاصم، مع خلفية أكاديمية أزهرية.</p>
+          </div>
+          <div class="feature reveal" style="--d:.08s">
+            <span class="num">02</span>
+            <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+            <h3 data-i18n="w2h">حصص فردية مباشرة</h3>
+            <p data-i18n="w2p">اهتمام كامل بالطالب عبر Zoom أو Google Meet، دون مجموعات أو تشتت.</p>
+          </div>
+          <div class="feature reveal" style="--d:.16s">
+            <span class="num">03</span>
+            <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 17v-3M12 17v-5M16 17v-2"/></svg></div>
+            <h3 data-i18n="w3h">تقرير شهري لولي الأمر</h3>
+            <p data-i18n="w3p">ملخص واضح لما أنجزه الطالب، ونقاط القوة، وما نعمل عليه الشهر القادم.</p>
+          </div>
+          <div class="feature reveal" style="--d:.24s">
+            <span class="num">04</span>
+            <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg></div>
+            <h3 data-i18n="w4h">مواعيد مرنة</h3>
+            <p data-i18n="w4p">نتفق معك على المواعيد المناسبة بتوقيت بلدك، سواء في الخليج أو أوروبا أو أمريكا.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6) البرامج (المعرض) ==================== -->
+    <section class="section" id="programs" aria-labelledby="programs-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker" data-i18n="prK">برامجنا</span>
+          <h2 id="programs-title" data-i18n="prH">مسارات مصمّمة لكل عمر ومستوى</h2>
+          <p data-i18n="prP">اختر المسار الأقرب لك، وسنحدد نقطة البداية معاً في الحصة التجريبية.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card program reveal">
+            <div class="program-thumb p1" aria-hidden="true"><div class="pat"><svg><rect width="100%" height="100%" fill="url(#geoPat)"/></svg></div><span class="big">أ ب ت</span></div>
+            <div class="program-body">
+              <div class="tags"><span class="tag" data-i18n="pr1t1">الأطفال 5–9 سنوات</span><span class="tag gold" data-i18n="lvBeg">مبتدئ</span></div>
+              <h3 data-i18n="pr1h">التأسيس بالقاعدة النورانية</h3>
+              <p data-i18n="pr1p">بناء أساس متين في الحروف والحركات والمدود، تمهيداً للقراءة الصحيحة من المصحف.</p>
+              <a href="#contact" class="more js-wa" data-topic="pr1h"><span data-i18n="prCta">احجز حصة تجريبية لهذا المسار</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+          <article class="card program reveal" style="--d:.08s">
+            <div class="program-thumb p2" aria-hidden="true"><div class="pat"><svg><rect width="100%" height="100%" fill="url(#geoPat)"/></svg></div><span class="big">عَمَّ</span></div>
+            <div class="program-body">
+              <div class="tags"><span class="tag" data-i18n="pr2t1">الأطفال والناشئة</span><span class="tag gold" data-i18n="lvAll">كل المستويات</span></div>
+              <h3 data-i18n="pr2h">حفظ جزء عمّ وتبارك</h3>
+              <p data-i18n="pr2p">حفظ متدرّج مع التجويد والمراجعة، وتشجيع مستمر يربط الطفل بالقرآن بحب.</p>
+              <a href="#contact" class="more js-wa" data-topic="pr2h"><span data-i18n="prCta">احجز حصة تجريبية لهذا المسار</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+          <article class="card program reveal" style="--d:.16s">
+            <div class="program-thumb p3" aria-hidden="true"><div class="pat"><svg><rect width="100%" height="100%" fill="url(#geoPat)"/></svg></div><span class="big">تجويد</span></div>
+            <div class="program-body">
+              <div class="tags"><span class="tag" data-i18n="pr3t1">الكبار</span><span class="tag gold" data-i18n="lvMid">متوسط</span></div>
+              <h3 data-i18n="pr3h">تصحيح التلاوة للكبار</h3>
+              <p data-i18n="pr3p">برنامج هادئ لمن يريد ضبط قراءته وتطبيق أحكام التجويد بثقة، في وقت يناسب عمله.</p>
+              <a href="#contact" class="more js-wa" data-topic="pr3h"><span data-i18n="prCta">احجز حصة تجريبية لهذا المسار</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+          <article class="card program reveal">
+            <div class="program-thumb p4" aria-hidden="true"><div class="pat"><svg><rect width="100%" height="100%" fill="url(#geoPat)"/></svg></div><span class="big">إتقان</span></div>
+            <div class="program-body">
+              <div class="tags"><span class="tag" data-i18n="pr4t1">الناشئة والكبار</span><span class="tag gold" data-i18n="lvAdv">متقدم</span></div>
+              <h3 data-i18n="pr4h">الحفظ المتقدم والمراجعة</h3>
+              <p data-i18n="pr4p">خطة حفظ أسبوعية بأوراد ثابتة للمراجعة، لمن يطمح إلى حفظ أجزاء متعددة أو ختم القرآن.</p>
+              <a href="#contact" class="more js-wa" data-topic="pr4h"><span data-i18n="prCta">احجز حصة تجريبية لهذا المسار</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+          <article class="card program reveal" style="--d:.08s">
+            <div class="program-thumb p5" aria-hidden="true"><div class="pat"><svg><rect width="100%" height="100%" fill="url(#geoPat)"/></svg></div><span class="big" style="font-family:'Fraunces',serif;font-style:italic">Arabic</span></div>
+            <div class="program-body">
+              <div class="tags"><span class="tag" data-i18n="pr5t1">غير الناطقين بالعربية</span><span class="tag gold" data-i18n="lvBeg">مبتدئ</span></div>
+              <h3 data-i18n="pr5h">العربية لغير الناطقين بها</h3>
+              <p data-i18n="pr5p">تعلّم القراءة والمحادثة وفهم معاني السور القصيرة، مع الشرح بالإنجليزية خطوة بخطوة.</p>
+              <a href="#contact" class="more js-wa" data-topic="pr5h"><span data-i18n="prCta">احجز حصة تجريبية لهذا المسار</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+          <article class="card program reveal" style="--d:.16s">
+            <div class="program-thumb p6" aria-hidden="true"><div class="pat"><svg><rect width="100%" height="100%" fill="url(#geoPat)"/></svg></div><span class="big">سيرة</span></div>
+            <div class="program-body">
+              <div class="tags"><span class="tag" data-i18n="pr6t1">الأطفال 7–12 سنة</span><span class="tag gold" data-i18n="lvAll">كل المستويات</span></div>
+              <h3 data-i18n="pr6h">التربية الإسلامية للصغار</h3>
+              <p data-i18n="pr6p">قصص الأنبياء والسيرة، والوضوء والصلاة، والآداب اليومية، بأنشطة تفاعلية ممتعة.</p>
+              <a href="#contact" class="more js-wa" data-topic="pr6h"><span data-i18n="prCta">احجز حصة تجريبية لهذا المسار</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== كيف تبدأ ==================== -->
+    <section class="section section--alt" id="how" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker" data-i18n="hwK">كيف تبدأ</span>
+          <h2 id="how-title" data-i18n="hwH">ثلاث خطوات تفصلك عن أول حصة</h2>
+        </div>
+        <ol class="steps">
+          <li class="step reveal"><span class="step-n" aria-hidden="true"><svg><use href="#star8"/></svg><b>1</b></span>
+            <h3 data-i18n="hw1h">راسلنا على واتساب</h3>
+            <p data-i18n="hw1p">أخبرنا بعمر الطالب ومستواه وما يريد تعلّمه، ونتفق على موعد يناسب توقيتك.</p></li>
+          <li class="step reveal" style="--d:.08s"><span class="step-n" aria-hidden="true"><svg><use href="#star8"/></svg><b>2</b></span>
+            <h3 data-i18n="hw2h">احضر الحصة التجريبية المجانية</h3>
+            <p data-i18n="hw2p">حصة مباشرة نحدد فيها المستوى، ونقترح عليك الخطة والباقة المناسبة، دون أي التزام.</p></li>
+          <li class="step reveal" style="--d:.16s"><span class="step-n" aria-hidden="true"><svg><use href="#star8"/></svg><b>3</b></span>
+            <h3 data-i18n="hw3h">اختر باقتك وابدأ</h3>
+            <p data-i18n="hw3p">نثبّت مواعيدك الأسبوعية، وتبدأ الحصص، ويصلك تقرير عن التقدّم كل شهر.</p></li>
+        </ol>
+        <div class="steps-cta reveal"><a href="#contact" class="btn btn-whatsapp js-wa"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg><span data-i18n="ctaTrial">احجز حصة تجريبية مجانية</span></a></div>
+      </div>
+    </section>
+
+    <!-- ==================== الباقات والأسعار (عدّل الأسعار هنا) ==================== -->
+    <section class="section" id="packages" aria-labelledby="packages-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker" data-i18n="pkK">الباقات</span>
+          <h2 id="packages-title" data-i18n="pkH">اختر الإيقاع المناسب لك</h2>
+          <p data-i18n="pkP">كل الباقات حصص فردية مباشرة، وتبدأ بحصة تجريبية مجانية لتحديد المستوى.</p>
+        </div>
+
+        <div class="packages">
+          <article class="card pack reveal">
+            <span class="pnum">01</span>
+            <h3 data-i18n="pk1h">الباقة الأساسية</h3>
+            <span class="sess" data-i18n="pk1s">8 حصص شهرياً · 30 دقيقة</span>
+            <p data-i18n="pk1p">مناسبة للأطفال الصغار والمبتدئين.</p>
+            <div class="price"><b>$40</b><span data-i18n="perMonth">شهرياً</span></div>
+            <p class="per" data-i18n="pk1per">5 دولارات للحصة</p>
+            <a href="#contact" class="btn btn-outline js-wa" data-topic="pk1h" data-i18n="choose">اختر الباقة</a>
+          </article>
+          <article class="card pack featured reveal" style="--d:.08s">
+            <span class="popular" data-i18n="popular">الأكثر اختياراً</span>
+            <span class="pnum">02</span>
+            <h3 data-i18n="pk2h">الباقة القياسية</h3>
+            <span class="sess" data-i18n="pk2s">8 حصص شهرياً · 60 دقيقة</span>
+            <p data-i18n="pk2p">تلاوة وتجويد أو لغة عربية بتقدّم ثابت.</p>
+            <div class="price"><b>$75</b><span data-i18n="perMonth">شهرياً</span></div>
+            <p class="per" data-i18n="pk2per">حوالي 9.5 دولار للحصة</p>
+            <a href="#contact" class="btn btn-gold js-wa" data-topic="pk2h" data-i18n="choose">اختر الباقة</a>
+          </article>
+          <article class="card pack reveal" style="--d:.16s">
+            <span class="pnum">03</span>
+            <h3 data-i18n="pk3h">الباقة المكثفة</h3>
+            <span class="sess" data-i18n="pk3s">12 حصة شهرياً · 60 دقيقة</span>
+            <p data-i18n="pk3p">للحفظ والمراجعة أو التقدّم السريع.</p>
+            <div class="price"><b>$105</b><span data-i18n="perMonth">شهرياً</span></div>
+            <p class="per" data-i18n="pk3per">حوالي 8.75 دولار للحصة</p>
+            <a href="#contact" class="btn btn-outline js-wa" data-topic="pk3h" data-i18n="choose">اختر الباقة</a>
+          </article>
+        </div>
+
+        <div class="track reveal">
+          <div>
+            <h3 data-i18n="trH">مسار الإتقان والإجازة</h3>
+            <p data-i18n="trP">ختمة كاملة بالتجويد والإتقان على قراءة الإمام عاصم، يُحدَّد سعرها بعد جلسة التقييم.</p>
+          </div>
+          <a href="#contact" class="btn btn-primary js-wa" data-topic="trH" data-i18n="trCta">اطلب جلسة تقييم</a>
+        </div>
+
+        <ul class="perks reveal">
+          <li><span class="diamond" aria-hidden="true"></span><span data-i18n="pe1">حصة تجريبية مجانية لتحديد المستوى</span></li>
+          <li><span class="diamond" aria-hidden="true"></span><span data-i18n="pe2">خصم 10% للطالب الثاني من الأسرة نفسها</span></li>
+          <li><span class="diamond" aria-hidden="true"></span><span data-i18n="pe3">خصم 5% عند الاشتراك 3 أشهر مقدماً</span></li>
+          <li><span class="diamond" aria-hidden="true"></span><span data-i18n="pe4">تقرير شهري لولي الأمر عن مستوى الطالب</span></li>
+          <li><span class="diamond" aria-hidden="true"></span><span data-i18n="pe5">مواعيد مرنة بتوقيتك</span></li>
+          <li><span class="diamond" aria-hidden="true"></span><span data-i18n="pe6">حصص مباشرة عبر Zoom أو Google Meet</span></li>
+        </ul>
+        <p class="note" data-i18n="pkNote">الأسعار بالدولار الأمريكي، والدفع عبر PayPal أو Wise.</p>
+      </div>
+    </section>
+
+    <!-- ==================== 7) آراء أولياء الأمور ==================== -->
+    <!-- القسم مخفي حالياً (hidden) لأن الآراء نموذجية. عند توفر آراء حقيقية: استبدل النصوص، ثم احذف كلمة hidden من وسم القسم ومن رابطه في القائمة -->
+    <section class="section" id="testimonials" aria-labelledby="testimonials-title" hidden>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker" data-i18n="tsK">آراء أولياء الأمور</span>
+          <h2 id="testimonials-title" data-i18n="tsH">ماذا يقول من تعلّموا معنا</h2>
+        </div>
+        <div class="grid grid-3">
+          <figure class="card testimonial reveal">
+            <svg class="quote-ic" aria-hidden="true"><use href="#i-quote"/></svg>
+            <div class="stars" role="img" aria-label="تقييم 5 من 5" data-i18n-aria="rating"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+            <blockquote data-i18n="t1q">ابني كان يتهرّب من حصة القرآن، والآن هو من يذكّرني بموعدها. الصبر في التصحيح والتشجيع المستمر صنعا فرقاً واضحاً في قراءته خلال شهرين.</blockquote>
+            <figcaption class="person">
+              <span class="avatar" style="background:#0e5c5c" aria-hidden="true">أ</span>
+              <span><strong data-i18n="t1n">أم يوسف</strong><span data-i18n="t1r">ولية أمر — دبي</span></span>
+            </figcaption>
+          </figure>
+          <figure class="card testimonial reveal" style="--d:.08s">
+            <svg class="quote-ic" aria-hidden="true"><use href="#i-quote"/></svg>
+            <div class="stars" role="img" aria-label="تقييم 5 من 5" data-i18n-aria="rating"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+            <blockquote data-i18n="t2q">التقرير الشهري يجعلني أعرف بالضبط أين وصلت ابنتي في الحفظ والتجويد، والمواعيد مرنة جداً مع جدول المدرسة.</blockquote>
+            <figcaption class="person">
+              <span class="avatar" style="background:#b8862e" aria-hidden="true">ع</span>
+              <span><strong data-i18n="t2n">أبو عمر</strong><span data-i18n="t2r">ولي أمر — الشارقة</span></span>
+            </figcaption>
+          </figure>
+          <figure class="card testimonial reveal" style="--d:.16s">
+            <svg class="quote-ic" aria-hidden="true"><use href="#i-quote"/></svg>
+            <div class="stars" role="img" aria-label="تقييم 5 من 5" data-i18n-aria="rating"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+            <blockquote data-i18n="t3q">كنت أخاف أن أتعلّم العربية متأخراً، لكن الشرح بالإنجليزية جعل كل شيء واضحاً، وأصبحت أقرأ سورة الفاتحة وأفهم معانيها.</blockquote>
+            <figcaption class="person">
+              <span class="avatar" style="background:#24324a" aria-hidden="true">S</span>
+              <span><strong data-i18n="t3n">سارة</strong><span data-i18n="t3r">طالبة — المملكة المتحدة</span></span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8) الأسئلة الشائعة ==================== -->
+    <section class="section section--alt" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-grid">
+        <div class="faq-aside reveal">
+          <span class="kicker" data-i18n="fqK">الأسئلة الشائعة</span>
+          <h2 id="faq-title" data-i18n="fqH">كل ما تحتاج معرفته قبل البدء</h2>
+          <p data-i18n="fqP">لم تجد إجابتك؟ راسلنا على واتساب وسنرد عليك في أقرب وقت.</p>
+          <a href="#contact" class="btn btn-outline js-wa" data-i18n="fqCta">اسألنا مباشرة</a>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item reveal">
+            <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="fa1" id="fq1"><span data-i18n="q1">هل الحصة التجريبية مجانية فعلاً؟</span><span class="chev" aria-hidden="true"><svg><use href="#i-chev"/></svg></span></button></h3>
+            <div class="faq-a" id="fa1" role="region" aria-labelledby="fq1"><div><p data-i18n="a1">نعم، الحصة الأولى مجانية بالكامل ودون أي التزام. نحدد فيها مستوى الطالب وأهدافه، ثم نقترح الباقة والخطة المناسبة.</p></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="fa2" id="fq2"><span data-i18n="q2">ما الأعمار التي تُدرِّسونها؟</span><span class="chev" aria-hidden="true"><svg><use href="#i-chev"/></svg></span></button></h3>
+            <div class="faq-a" id="fa2" role="region" aria-labelledby="fq2"><div><p data-i18n="a2">نستقبل الأطفال من عمر 5 سنوات، والناشئة، والكبار من جميع الأعمار، ونكيّف أسلوب الشرح ومدة التركيز حسب كل مرحلة.</p></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="fa3" id="fq3"><span data-i18n="q3">كيف تتم الحصص؟</span><span class="chev" aria-hidden="true"><svg><use href="#i-chev"/></svg></span></button></h3>
+            <div class="faq-a" id="fa3" role="region" aria-labelledby="fq3"><div><p data-i18n="a3">حصص فردية مباشرة عبر Zoom أو Google Meet. يكفي جهاز بكاميرا وسماعة واتصال إنترنت مستقر ومكان هادئ.</p></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="fa4" id="fq4"><span data-i18n="q4">هل تُدرِّسون غير الناطقين بالعربية؟</span><span class="chev" aria-hidden="true"><svg><use href="#i-chev"/></svg></span></button></h3>
+            <div class="faq-a" id="fa4" role="region" aria-labelledby="fq4"><div><p data-i18n="a4">نعم، ويتم الشرح باللغة الإنجليزية عند الحاجة، مع التدرّج من الحروف والأصوات حتى القراءة والفهم.</p></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="fa5" id="fq5"><span data-i18n="q5">ماذا لو غاب الطالب عن حصة؟</span><span class="chev" aria-hidden="true"><svg><use href="#i-chev"/></svg></span></button></h3>
+            <div class="faq-a" id="fa5" role="region" aria-labelledby="fq5"><div><p data-i18n="a5">يمكن تعويض الحصة إذا تم الاعتذار قبل موعدها بـ 24 ساعة على الأقل، ونتفق معك على موعد بديل مناسب.</p></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="fa6" id="fq6"><span data-i18n="q6">كيف يتم الدفع؟</span><span class="chev" aria-hidden="true"><svg><use href="#i-chev"/></svg></span></button></h3>
+            <div class="faq-a" id="fa6" role="region" aria-labelledby="fq6"><div><p data-i18n="a6">يتم الدفع شهرياً مقدماً عبر PayPal أو Wise، ونرسل لك التفاصيل بعد اختيار الباقة.</p></div></div>
+          </div>
+          <div class="faq-item reveal">
+            <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="fa7" id="fq7"><span data-i18n="q7">هل يمكنني إيقاف الاشتراك أو استرداد المبلغ؟</span><span class="chev" aria-hidden="true"><svg><use href="#i-chev"/></svg></span></button></h3>
+            <div class="faq-a" id="fa7" role="region" aria-labelledby="fq7"><div><p data-i18n="a7">الحصة الأولى مجانية، فلا تدفع إلا بعد أن تجرّب. الاشتراك شهري دون التزام طويل، ويمكنك إيقافه قبل التجديد. وإذا احتجت إلى التوقف خلال الشهر، نردّ لك قيمة الحصص التي لم تُؤخذ.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 9) تواصل معنا ==================== -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker" data-i18n="ctK">تواصل معنا</span>
+          <h2 id="contact-title" data-i18n="ctH">احجز حصتك التجريبية المجانية</h2>
+          <p data-i18n="ctP">أسرع طريق هو واتساب. وإن أحببت، اترك بياناتك في النموذج وسنجهّز لك الرسالة.</p>
+          <a href="#" class="btn btn-whatsapp js-wa"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg><span data-i18n="waBtn">راسلنا على واتساب</span></a>
+        </div>
+
+        <div class="contact-grid">
+          <div class="form-card reveal">
+            <form id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="field">
+                  <label for="name"><span data-i18n="fName">الاسم</span> <span class="req" aria-hidden="true">*</span></label>
+                  <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-err" placeholder="مثال: أحمد محمد" data-i18n-ph="phName" />
+                  <span class="error" id="name-err" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                  <label for="contactInfo"><span data-i18n="fContact">البريد الإلكتروني أو رقم الهاتف</span> <span class="req" aria-hidden="true">*</span></label>
+                  <input id="contactInfo" name="contact" type="text" dir="ltr" inputmode="email" autocomplete="email" required aria-describedby="contact-err" placeholder="+1 555 123 4567" />
+                  <span class="error" id="contact-err" aria-live="polite"></span>
+                </div>
+              </div>
+              <div class="field">
+                <label for="program" data-i18n="fProgram">المسار أو الباقة (اختياري)</label>
+                <select id="program" name="program">
+                  <option value="" data-i18n="opt0">لم أحدد بعد</option>
+                  <option value="basic" data-i18n="pk1h">الباقة الأساسية</option>
+                  <option value="standard" data-i18n="pk2h">الباقة القياسية</option>
+                  <option value="intensive" data-i18n="pk3h">الباقة المكثفة</option>
+                  <option value="ijazah" data-i18n="trH">مسار الإتقان والإجازة</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="message"><span data-i18n="fMsg">رسالتك</span> <span class="req" aria-hidden="true">*</span></label>
+                <textarea id="message" name="message" required aria-describedby="message-err" placeholder="عمر الطالب، مستواه الحالي، والمواعيد المناسبة لكم" data-i18n-ph="phMsg"></textarea>
+                <span class="error" id="message-err" aria-live="polite"></span>
+              </div>
+              <div class="form-foot">
+                <small data-i18n="fNote">الحقول المعلَّمة بـ * مطلوبة.</small>
+                <button type="submit" class="btn btn-primary" id="submitBtn">
+                  <span class="spinner" aria-hidden="true"></span>
+                  <svg class="send-ic flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 10 14"/><path d="m21 3-7 18-4-7-7-4z"/></svg>
+                  <span class="btn-label" data-i18n="send">إرسال الطلب</span>
+                </button>
+              </div>
+            </form>
+
+            <div class="success" id="formSuccess" role="status" tabindex="-1">
+              <div class="ok" aria-hidden="true"><span class="emblem"><svg><use href="#star8"/></svg></span><svg class="check" style="position:absolute"><use href="#i-check"/></svg></div>
+              <h3 data-i18n="okH">جزاك الله خيراً، طلبك جاهز للإرسال</h3>
+              <p data-i18n="okP">اضغط الزر لإرسال طلبك على واتساب، وسنتواصل معك لتحديد موعد الحصة التجريبية المجانية.</p>
+              <div class="success-actions">
+                <a href="#" class="btn btn-whatsapp" id="waSend" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg><span data-i18n="waSend">أرسل الطلب على واتساب</span></a>
+                <button type="button" class="btn btn-outline btn-sm" id="sendAnother" data-i18n="again">إرسال طلب آخر</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== بيانات التواصل: عدّلها هنا وفي CONFIG داخل الـ JavaScript ===== -->
+          <aside class="info-card reveal" style="--d:.1s" aria-labelledby="info-title">
+            <h3 id="info-title" data-i18n="infoH">بيانات التواصل</h3>
+            <p data-i18n="infoP">نسعد بالرد على استفساراتك وحجز حصتك التجريبية.</p>
+            <ul class="info-list">
+              <li>
+                <span class="ic" aria-hidden="true"><svg><use href="#i-whatsapp"/></svg></span>
+                <span><small data-i18n="lWa">واتساب</small><a href="#" class="ltr js-wa js-wa-text">+20 106 837 2821</a></span>
+              </li>
+              <li>
+                <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></span>
+                <span><small data-i18n="lIg">إنستجرام</small><a href="https://instagram.com/altybianacademy" target="_blank" rel="noopener" class="ltr">@altybianacademy</a></span>
+              </li>
+              <li>
+                <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg></span>
+                <span><small data-i18n="lBook">مواعيد الحصص</small><span class="val" data-i18n="lBookV">بتوقيتك — نتفق عليها معاً</span></span>
+              </li>
+              <li>
+                <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></span>
+                <span><small data-i18n="lWhere">نخدم الطلاب في</small><span class="val" data-i18n="lWhereV">الخليج، أوروبا وأمريكا</span></span>
+              </li>
+            </ul>
+            <a href="#" class="btn btn-whatsapp js-wa" target="_blank" rel="noopener">
+              <svg aria-hidden="true"><use href="#i-whatsapp"/></svg>
+              <span data-i18n="waBtn">راسلنا على واتساب</span>
+            </a>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 10) التذييل ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#home" class="logo">
+            <span class="emblem" aria-hidden="true"><svg><use href="#star8"/></svg><span>ت</span></span>
+            <span class="logo-sep" aria-hidden="true"></span>
+            <span class="logo-text"><strong>التبيان</strong><em>Al‑Tibyan Academy</em></span>
+          </a>
+          <p class="footer-about" data-i18n="ftAbout">أكاديمية أونلاين لتعليم القرآن الكريم واللغة العربية والتربية الإسلامية، للأطفال والكبار، للناطقين بالعربية وغير الناطقين بها.</p>
+          <div class="socials">
+            <a href="https://instagram.com/altybianacademy" target="_blank" rel="noopener" aria-label="إنستجرام" data-i18n-aria="aIg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="#" class="js-wa" target="_blank" rel="noopener" aria-label="واتساب" data-i18n-aria="aWa"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+          </div>
+        </div>
+        <nav aria-label="روابط سريعة" data-i18n-aria="ftQuick">
+          <h4 data-i18n="ftQuick">روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="#about" data-i18n="nAbout">عن الأكاديمية</a></li>
+            <li><a href="#programs" data-i18n="nPrograms">البرامج</a></li>
+            <li><a href="#packages" data-i18n="nPackages">الباقات</a></li>
+            <li><a href="#faq" data-i18n="nFaq">الأسئلة الشائعة</a></li>
+            <li><a href="#contact" data-i18n="ctK">تواصل معنا</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="ماذا نُعلِّم" data-i18n-aria="subK">
+          <h4 data-i18n="subK">ماذا نُعلِّم</h4>
+          <ul class="footer-links">
+            <li><a href="#subjects" data-i18n="s1h">تصحيح التلاوة</a></li>
+            <li><a href="#subjects" data-i18n="s2h">أحكام التجويد</a></li>
+            <li><a href="#subjects" data-i18n="s3h">الحفظ والمراجعة</a></li>
+            <li><a href="#subjects" data-i18n="s5h">العربية لغير الناطقين بها</a></li>
+            <li><a href="#subjects" data-i18n="s6h">التربية الإسلامية</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h4 data-i18n="infoH">بيانات التواصل</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="ltr js-wa js-wa-text">+20 106 837 2821</a></li>
+            <li><a href="https://instagram.com/altybianacademy" target="_blank" rel="noopener" class="ltr">@altybianacademy</a></li>
+            <li data-i18n="ftOnline">حصص أونلاين حول العالم</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> <span data-i18n="rights">أكاديمية التبيان. جميع الحقوق محفوظة.</span></span>
+        <span dir="ltr">Quran · Arabic · Islamic Studies</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-cta" id="stickyCta">
+    <a href="#contact" class="btn btn-whatsapp js-wa"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg><span data-i18n="ctaTrial">احجز حصة تجريبية مجانية</span></a>
+  </div>
+
+  <button class="to-top" id="toTop" type="button" aria-label="العودة إلى أعلى الصفحة" data-i18n-aria="toTop">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* =========================================================
+         CONFIG — ضع رقم الواتساب هنا (بصيغة دولية بدون + أو مسافات)
+         ========================================================= */
+      var CONFIG = {
+        whatsapp: '201068372821',           // بصيغة دولية بدون + أو مسافات
+        whatsappDisplay: '+20 106 837 2821' // كما يظهر للزائر
+      };
+
+      var root = document.documentElement;
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var $ = function (id) { return document.getElementById(id); };
+
+      /* ---------- النصوص الإنجليزية ---------- */
+      var EN = {
+        skip: 'Skip to content', navLabel: 'Main navigation',         nAbout: 'About', nSubjects: 'What we teach', nPrograms: 'Programs', nPackages: 'Packages', nReviews: 'Reviews', nFaq: 'FAQ',
+        ctaNav: 'Book a trial', eyebrow: 'Online academy · Quran · Arabic · Islamic Studies',
+        heroTitle: 'Learn the Quran and Arabic <span class="hl">the right way</span>… from home',
+        heroLead: 'Live one-to-one lessons with an Ijazah-certified teacher, for your children and for you, with a plan built around your level and flexible times in your own time zone.',
+        ctaTrial: 'Book a free trial lesson', ctaPackages: 'See packages',
+        trust1: 'Ijazah in the recitation of Asim', trust2: 'Free trial lesson', trust3: 'Monthly progress report',
+        chip1: 'Tajweed', chip2: 'Memorization', chip3: 'Arabic', chip4: 'Islamic Studies', badgeT: '1:1 live lessons',
+        aboutK: 'About Al-Tibyan', aboutH: 'An Ijazah-certified teacher who explains in Arabic and English',
+        aboutP1: 'Al-Tibyan is an online academy teaching the Quran, Arabic and Islamic Studies to children and adults, native and non-native Arabic speakers alike, wherever they live.',
+        aboutP2: 'The academy is supervised by teacher Muhammad Abdelmoneem, a graduate of the Faculty of Languages and Translation at Al-Azhar University (Islamic Studies in English) who holds an Ijazah with a connected chain in the recitation of Imam Asim. He has taught Quran, Arabic and Islamic Studies to students of many nationalities, so you get precise recitation explained clearly in Arabic or English.',
+        cred1: 'Ijazah in Asim’s recitation', cred2: 'Al-Azhar University graduate', cred3: 'Teaches in Arabic & English', aboutCta: 'Talk to us',
+        st1: 'Teaching since', st2: 'Subjects: Quran, Arabic, Islamic Studies', st3: 'Live one-to-one lessons', st4: 'Teaching languages: Arabic & English',
+        subK: 'What we teach', subH: 'A complete journey, from the first letter to mastery',
+        subP: 'After a placement lesson we build a plan for each student and follow their progress lesson by lesson.',
+        s1h: 'Quran recitation', s1p: 'Read correctly from the Mushaf with accurate articulation of every letter, starting from Al-Qaida An-Noorania for beginners.',
+        s2h: 'Tajweed rules', s2p: 'Simple explanations applied live to real verses, so the rules become habit, not just theory.',
+        s3h: 'Memorization & revision', s3p: 'A memorization plan that fits the student’s age and schedule, with regular revision so nothing is lost.',
+        s4h: 'Arabic for native speakers', s4p: 'Reading, writing, spelling and simplified grammar for children and students to strengthen their mother tongue.',
+        s5h: 'Arabic for non-native speakers', s5p: 'From letters and sounds to conversation and understanding the Quran, explained in English when needed.',
+        s6h: 'Islamic Studies', s6p: 'Aqeedah, fiqh of worship, Seerah and Islamic manners, taught through engaging stories for every age.',
+        whyK: 'Why Al-Tibyan?', whyH: 'What you get with every subscription', whyP: 'Four things that come with every package, whatever the student’s age or level.',
+        w1h: 'Ijazah-certified teacher', w1p: 'A connected chain of recitation in the reading of Imam Asim, with an Al-Azhar academic background.',
+        w2h: 'Live one-to-one lessons', w2p: 'Full attention on the student over Zoom or Google Meet, with no groups or distractions.',
+        w3h: 'Monthly report for parents', w3p: 'A clear summary of what the student achieved, their strengths, and next month’s focus.',
+        w4h: 'Flexible scheduling', w4p: 'We agree on times that suit you in your own time zone: the Gulf, Europe or the Americas.',
+        prK: 'Our programs', prH: 'Tracks designed for every age and level', prP: 'Choose the closest track to you; we’ll set your starting point together in the trial lesson.',
+        pr1t1: 'Kids 5–9', pr1h: 'Foundations with Noorania', pr1p: 'A solid base in letters, vowels and elongations, preparing for correct reading from the Mushaf.',
+        pr2t1: 'Kids & teens', pr2h: 'Memorizing Juz Amma & Tabarak', pr2p: 'Gradual memorization with tajweed and revision, and constant encouragement that builds love for the Quran.',
+        pr3t1: 'Adults', pr3h: 'Recitation for adults', pr3p: 'A calm program for adults who want to perfect their reading and apply tajweed confidently around their work.',
+        pr4t1: 'Teens & adults', pr4h: 'Advanced memorization', pr4p: 'A weekly plan with fixed revision portions for those aiming to memorize several ajza’ or the whole Quran.',
+        pr5t1: 'Non-Arabic speakers', pr5h: 'Arabic for non-native speakers', pr5p: 'Learn to read, speak and understand the meanings of short surahs, explained step by step in English.',
+        pr6t1: 'Kids 7–12', pr6h: 'Islamic Studies for kids', pr6p: 'Stories of the Prophets and the Seerah, wudu and salah, and daily manners through fun activities.',
+        lvBeg: 'Beginner', lvMid: 'Intermediate', lvAdv: 'Advanced', lvAll: 'All levels',
+        pkK: 'Packages', pkH: 'Choose the pace that suits you', pkP: 'All packages are live one-to-one lessons and start with a free placement lesson.',
+        pk1h: 'Basic package', pk1s: '8 lessons / month · 30 min', pk1p: 'Ideal for young children and beginners.', pk1per: '$5 per lesson',
+        pk2h: 'Standard package', pk2s: '8 lessons / month · 60 min', pk2p: 'Recitation and tajweed or Arabic with steady progress.', pk2per: 'About $9.50 per lesson',
+        pk3h: 'Intensive package', pk3s: '12 lessons / month · 60 min', pk3p: 'For memorization, revision or faster progress.', pk3per: 'About $8.75 per lesson',
+        perMonth: '/ month', prCta: 'Book a trial for this track',
+        hwK: 'How to start', hwH: 'Three steps to your first lesson',
+        hw1h: 'Message us on WhatsApp', hw1p: 'Tell us the student’s age, level and goals, and we’ll agree on a time in your time zone.',
+        hw2h: 'Take the free trial lesson', hw2p: 'A live lesson where we assess the level and suggest the right plan and package, with no commitment.',
+        hw3h: 'Choose your package and begin', hw3p: 'We fix your weekly times, lessons start, and you get a progress report every month.',
+        q7: 'Can I stop my subscription or get a refund?', a7: 'The first lesson is free, so you only pay after trying. Subscriptions are monthly with no long-term commitment, and you can stop before renewal. If you need to stop mid-month, we refund the lessons you haven’t taken.', choose: 'Choose package', popular: 'Most popular',
+        trH: 'Mastery & Ijazah track', trP: 'A complete recitation of the Quran with tajweed in the reading of Imam Asim. Pricing is set after an assessment session.', trCta: 'Request an assessment',
+        pe1: 'Free placement trial lesson', pe2: '10% off for a second student from the same family', pe3: '5% off when paying 3 months upfront', pe4: 'Monthly progress report for parents', pe5: 'Flexible times in your time zone', pe6: 'Live lessons on Zoom or Google Meet',
+        pkNote: 'Prices are in US dollars. Pay via PayPal or Wise.',
+        tsK: 'Reviews', tsH: 'What our students and parents say', rating: 'Rated 5 out of 5',
+        t1q: 'My son used to avoid his Quran lesson; now he’s the one reminding me it’s time. The patient correction and constant encouragement made a clear difference in two months.',
+        t1n: 'Umm Yusuf', t1r: 'Parent — Dubai',
+        t2q: 'The monthly report shows me exactly where my daughter is in memorization and tajweed, and the times fit easily around school.',
+        t2n: 'Abu Omar', t2r: 'Parent — Sharjah',
+        t3q: 'I worried it was too late to learn Arabic, but the English explanations made everything clear. Now I can read Al-Fatiha and understand its meaning.',
+        t3n: 'Sarah', t3r: 'Student — United Kingdom',
+        fqK: 'FAQ', fqH: 'Everything you need to know before you start', fqP: 'Didn’t find your answer? Message us on WhatsApp and we’ll reply soon.', fqCta: 'Ask us directly',
+        q1: 'Is the trial lesson really free?', a1: 'Yes, the first lesson is completely free with no commitment. We assess the student’s level and goals, then suggest the right package and plan.',
+        q2: 'What ages do you teach?', a2: 'We teach children from age 5, teenagers and adults of all ages, adapting the teaching style and lesson length to each stage.',
+        q3: 'How do the lessons work?', a3: 'Live one-to-one lessons on Zoom or Google Meet. All you need is a device with a camera and headset, a stable connection and a quiet place.',
+        q4: 'Do you teach non-Arabic speakers?', a4: 'Yes. Lessons are explained in English when needed, building up from letters and sounds to reading and understanding.',
+        q5: 'What if the student misses a lesson?', a5: 'A lesson can be rescheduled if you let us know at least 24 hours in advance, and we’ll agree on a new time together.',
+        q6: 'How do I pay?', a6: 'Payment is monthly in advance via PayPal or Wise. We’ll send you the details once you choose a package.',
+        ctK: 'Contact us', ctH: 'Book your free trial lesson', ctP: 'WhatsApp is the fastest way. If you prefer, leave your details in the form and we’ll prepare the message for you.',
+        fName: 'Name', phName: 'e.g. Ahmed Mohamed', fContact: 'Email or phone number', fProgram: 'Track or package (optional)', opt0: 'Not sure yet',
+        fMsg: 'Your message', phMsg: 'Student’s age, current level, and times that suit you', fNote: 'Fields marked * are required.', send: 'Send request', sending: 'Sending…',
+        okH: 'Thank you, your request is ready to send', okP: 'Tap the button to send your request on WhatsApp, and we’ll get in touch to schedule your free trial lesson.', again: 'Send another request',
+        infoH: 'Contact details', infoP: 'We’re happy to answer your questions and book your trial lesson.', lWa: 'WhatsApp', lIg: 'Instagram',
+        lBook: 'Lesson times', lBookV: 'In your time zone, agreed together', lWhere: 'We teach students in', lWhereV: 'The Gulf, Europe and the Americas',
+        waBtn: 'Message us on WhatsApp', waSend: 'Send request on WhatsApp', aIg: 'Instagram', aWa: 'WhatsApp', aFb: 'Facebook', aYt: 'YouTube',
+        ftAbout: 'An online academy teaching the Quran, Arabic and Islamic Studies to children and adults, native and non-native Arabic speakers.',
+        ftQuick: 'Quick links', ftOnline: 'Online lessons worldwide', rights: 'Al-Tibyan Academy. All rights reserved.', toTop: 'Back to top',
+        title: 'Al-Tibyan Academy | Learn Quran & Arabic Online',
+        // رسائل التحقق
+        eName: 'Please enter your name.', eNameShort: 'Name is too short.', eContact: 'Please enter your email or phone number.',
+        eContactBad: 'Enter a valid email or a phone number of 8–15 digits.', eMsg: 'Please write your message.', eMsgShort: 'Message is too short; write at least 10 characters.',
+        themeToDark: 'Switch to dark mode', themeToLight: 'Switch to light mode', menuOpen: 'Open menu', menuClose: 'Close menu',
+        waIntro: 'Assalamu alaikum, I would like to book a free trial lesson at Al-Tibyan Academy.'
+      };
+      var AR_MSG = {
+        eName: 'من فضلك اكتب اسمك.', eNameShort: 'الاسم قصير جداً.', eContact: 'من فضلك اكتب بريدك الإلكتروني أو رقم هاتفك.',
+        eContactBad: 'أدخل بريداً إلكترونياً صحيحاً أو رقم هاتف من 8 إلى 15 رقماً.', eMsg: 'من فضلك اكتب رسالتك.', eMsgShort: 'الرسالة قصيرة جداً؛ اكتب 10 أحرف على الأقل.',
+        themeToDark: 'التبديل إلى الوضع الداكن', themeToLight: 'التبديل إلى الوضع الفاتح', menuOpen: 'فتح القائمة', menuClose: 'إغلاق القائمة',
+        send: 'إرسال الطلب', sending: 'جارٍ الإرسال…', title: 'أكاديمية التبيان | تعليم القرآن الكريم واللغة العربية أونلاين',
+        waIntro: 'السلام عليكم، أرغب في حجز حصة تجريبية مجانية في أكاديمية التبيان.'
+      };
+      var lang = root.lang === 'ar' ? 'ar' : 'en';
+      // النصوص العربية الأصلية (تُقرأ من الصفحة) لاستخدامها في رسائل واتساب
+      var AR = {};
+      document.querySelectorAll('[data-i18n]').forEach(function (el) { var k = el.getAttribute('data-i18n'); if (!(k in AR)) AR[k] = el.textContent.trim(); });
+      var tr = function (k) { return lang === 'en' && EN[k] ? EN[k].replace(/<[^>]+>/g, '') : AR[k]; };
+      var t = function (k) { return lang === 'en' ? EN[k] : AR_MSG[k]; };
+
+      function applyLang(l, save) {
+        lang = l;
+        root.lang = l; root.dir = l === 'en' ? 'ltr' : 'rtl';
+        document.querySelectorAll('[data-i18n]').forEach(function (el) {
+          var k = el.getAttribute('data-i18n');
+          if (el.dataset.ar === undefined) el.dataset.ar = el.innerHTML;
+          el.innerHTML = l === 'en' && EN[k] ? EN[k] : el.dataset.ar;
+        });
+        document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+          var k = el.getAttribute('data-i18n-aria');
+          if (el.dataset.arAria === undefined) el.dataset.arAria = el.getAttribute('aria-label');
+          el.setAttribute('aria-label', l === 'en' && EN[k] ? EN[k] : el.dataset.arAria);
+        });
+        document.querySelectorAll('[data-i18n-ph]').forEach(function (el) {
+          var k = el.getAttribute('data-i18n-ph');
+          if (el.dataset.arPh === undefined) el.dataset.arPh = el.getAttribute('placeholder');
+          el.setAttribute('placeholder', l === 'en' && EN[k] ? EN[k] : el.dataset.arPh);
+        });
+        document.title = t('title');
+        var lb = $('langToggle');
+        lb.textContent = l === 'en' ? 'ع' : 'EN';
+        lb.setAttribute('lang', l === 'en' ? 'ar' : 'en');
+        lb.setAttribute('aria-label', l === 'en' ? 'ع — العربية' : 'EN — English');
+        updateThemeLabel(); setMenu(header.classList.contains('nav-open')); refreshWa();
+        // إعادة رسائل الخطأ الظاهرة باللغة الجديدة
+        Object.keys(fields).forEach(function (k) { if (fields[k].getAttribute('aria-invalid') === 'true') validate(k); });
+        if (save) { try { localStorage.setItem('tibyan-lang', l); } catch (e) {} }
+      }
+
+      /* ---------- السنة الحالية ---------- */
+      $('year').textContent = new Date().getFullYear();
+
+      /* ---------- روابط واتساب ---------- */
+      function waLink(text) {
+        var base = CONFIG.whatsapp ? 'https://wa.me/' + CONFIG.whatsapp : 'https://instagram.com/altybianacademy';
+        return CONFIG.whatsapp && text ? base + '?text=' + encodeURIComponent(text) : base;
+      }
+      // كل أزرار الحجز تفتح واتساب برسالة جاهزة (ومعها اسم الباقة أو المسار إن وُجد)
+      function refreshWa() {
+        document.querySelectorAll('.js-wa').forEach(function (a) {
+          var topic = a.getAttribute('data-topic');
+          var text = t('waIntro') + (topic ? '\n' + (lang === 'en' ? 'Interested in: ' : 'مهتم بـ: ') + tr(topic) : '');
+          a.href = waLink(text); a.target = '_blank'; a.rel = 'noopener';
+        });
+      }
+      refreshWa();
+      document.querySelectorAll('.js-wa-text').forEach(function (a) { a.textContent = CONFIG.whatsappDisplay; });
+
+      /* ---------- الوضع الفاتح / الداكن ---------- */
+      var themeBtn = $('themeToggle');
+      var metaTheme = document.querySelector('meta[name="theme-color"]');
+      function updateThemeLabel() {
+        var dark = root.getAttribute('data-theme') === 'dark';
+        themeBtn.setAttribute('aria-pressed', String(dark));
+        themeBtn.setAttribute('aria-label', dark ? t('themeToLight') : t('themeToDark'));
+        metaTheme.setAttribute('content', dark ? '#061c1c' : '#0a3d3d');
+      }
+      themeBtn.addEventListener('click', function () {
+        var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('tibyan-theme', next); } catch (e) {}
+        updateThemeLabel();
+      });
+
+      /* ---------- قائمة الموبايل ---------- */
+      var header = $('header'), menuBtn = $('menuToggle'), navMenu = $('navMenu');
+      function setMenu(open) {
+        header.classList.toggle('nav-open', open);
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.setAttribute('aria-label', open ? t('menuClose') : t('menuOpen'));
+      }
+      menuBtn.addEventListener('click', function () { setMenu(!header.classList.contains('nav-open')); });
+      navMenu.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && header.classList.contains('nav-open')) { setMenu(false); menuBtn.focus(); } });
+      document.addEventListener('click', function (e) { if (header.classList.contains('nav-open') && !header.contains(e.target)) setMenu(false); });
+      window.addEventListener('resize', function () { if (window.innerWidth > 1060) setMenu(false); });
+
+      /* ---------- ظل الهيدر + زر العودة لأعلى ---------- */
+      var toTop = $('toTop');
+      function onScroll() {
+        var y = window.scrollY;
+        header.classList.toggle('is-scrolled', y > 10);
+        toTop.classList.toggle('is-visible', y > 600);
+        $('stickyCta').classList.toggle('is-visible', y > 500);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+      toTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+        document.querySelector('.nav .logo').focus({ preventScroll: true });
+      });
+
+      /* ---------- الرابط النشط ---------- */
+      var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+      if ('IntersectionObserver' in window) {
+        var so = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (!en.isIntersecting) return;
+            links.forEach(function (a) {
+              var on = a.getAttribute('href') === '#' + en.target.id;
+              a.classList.toggle('is-active', on);
+              if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+            });
+          });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        document.querySelectorAll('main section[id]').forEach(function (s) { so.observe(s); });
+      }
+
+      /* ---------- العدّادات ---------- */
+      function runCounter(el) {
+        var target = parseInt(el.getAttribute('data-target'), 10) || 0, suffix = el.getAttribute('data-suffix') || '';
+        if (reduceMotion) { el.textContent = target + suffix; return; }
+        var start = null, dur = 1600;
+        (function step(ts) {
+          if (ts === undefined) return requestAnimationFrame(step);
+          if (!start) start = ts;
+          var p = Math.min((ts - start) / dur, 1);
+          el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix;
+          if (p < 1) requestAnimationFrame(step);
+        })();
+      }
+
+      /* ---------- الظهور عند التمرير ---------- */
+      var reveals = document.querySelectorAll('.reveal'), counters = document.querySelectorAll('.stat-num[data-target]');
+      if ('IntersectionObserver' in window && !reduceMotion) {
+        var ro = new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-visible'); obs.unobserve(en.target); } });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(function (el) { ro.observe(el); });
+        var co = new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (en) { if (en.isIntersecting) { runCounter(en.target); obs.unobserve(en.target); } });
+        }, { threshold: 0.5 });
+        counters.forEach(function (el) { co.observe(el); });
+      } else {
+        reveals.forEach(function (el) { el.classList.add('is-visible'); });
+        counters.forEach(runCounter);
+      }
+
+      /* ---------- الأسئلة الشائعة ---------- */
+      var qs = document.querySelectorAll('.faq-q');
+      qs.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var item = btn.closest('.faq-item'), willOpen = !item.classList.contains('is-open');
+          qs.forEach(function (o) { o.closest('.faq-item').classList.remove('is-open'); o.setAttribute('aria-expanded', 'false'); });
+          if (willOpen) { item.classList.add('is-open'); btn.setAttribute('aria-expanded', 'true'); }
+        });
+      });
+
+      /* ---------- نموذج الحجز ---------- */
+      var form = $('contactForm'), success = $('formSuccess'), submitBtn = $('submitBtn');
+      var fields = { name: $('name'), contact: $('contactInfo'), message: $('message') };
+      var errors = { name: $('name-err'), contact: $('contact-err'), message: $('message-err') };
+      var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, phoneRe = /^\+?\d{8,15}$/;
+
+      function validate(k) {
+        var v = fields[k].value.trim(), m = '';
+        if (k === 'name') m = !v ? t('eName') : (v.length < 3 ? t('eNameShort') : '');
+        if (k === 'contact') m = !v ? t('eContact') : (!emailRe.test(v) && !phoneRe.test(v.replace(/[\s\-()]/g, '')) ? t('eContactBad') : '');
+        if (k === 'message') m = !v ? t('eMsg') : (v.length < 10 ? t('eMsgShort') : '');
+        errors[k].textContent = m;
+        fields[k].setAttribute('aria-invalid', m ? 'true' : 'false');
+        return !m;
+      }
+      Object.keys(fields).forEach(function (k) {
+        fields[k].addEventListener('blur', function () { if (fields[k].value) validate(k); });
+        fields[k].addEventListener('input', function () { if (fields[k].getAttribute('aria-invalid') === 'true') validate(k); });
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var first = null;
+        Object.keys(fields).forEach(function (k) { if (!validate(k) && !first) first = fields[k]; });
+        if (first) { first.focus(); return; }
+
+        var sel = $('program'), progText = sel.value ? sel.options[sel.selectedIndex].text : '';
+        var text = t('waIntro') + '\n\n' +
+          (lang === 'en' ? 'Name: ' : 'الاسم: ') + fields.name.value.trim() + '\n' +
+          (lang === 'en' ? 'Contact: ' : 'التواصل: ') + fields.contact.value.trim() + '\n' +
+          (progText ? (lang === 'en' ? 'Package: ' : 'الباقة: ') + progText + '\n' : '') +
+          '\n' + fields.message.value.trim();
+
+        submitBtn.disabled = true; submitBtn.classList.add('is-loading');
+        submitBtn.querySelector('.btn-label').textContent = t('sending');
+        // إن كان رقم الواتساب مضبوطاً، يظهر زر يفتح الرسالة جاهزة على واتساب
+        var waSend = $('waSend');
+        waSend.href = waLink(text);
+        setTimeout(function () {
+          submitBtn.disabled = false; submitBtn.classList.remove('is-loading');
+          submitBtn.querySelector('.btn-label').textContent = t('send');
+          form.reset();
+          Object.keys(fields).forEach(function (k) { fields[k].removeAttribute('aria-invalid'); errors[k].textContent = ''; });
+          form.hidden = true; success.classList.add('is-shown'); success.focus();
+        }, 700);
+      });
+      $('sendAnother').addEventListener('click', function () { success.classList.remove('is-shown'); form.hidden = false; fields.name.focus(); });
+
+      /* ---------- زر اللغة ---------- */
+      $('langToggle').addEventListener('click', function () { applyLang(lang === 'en' ? 'ar' : 'en', true); });
+      updateThemeLabel(); setMenu(false);
+      if (lang === 'en') applyLang('en', false);
+      document.title = t('title');
+      // روابط مباشرة للّغتين: أضف ‎#ar أو ‎#en في آخر الرابط
+      window.addEventListener('hashchange', function () {
+        if (location.hash === '#ar' || location.hash === '#en') applyLang(location.hash.slice(1), true);
+      });
+    })();
+  </script>
+</body>
+</html>
